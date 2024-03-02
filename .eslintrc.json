@@ -1,16 +1,94 @@
 {
   "root": true,
+  "parser": "@babel/eslint-parser",
   "extends": ["next", "prettier", "next/core-web-vitals", "eslint:recommended"],
-  "plugins": ["import", "prettier"],
+  "plugins": ["react", "react-hooks", "import", "prettier"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+    // "jest": true
+  },
+  "parserOptions": {
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "babelOptions": {
+      "presets": ["next/babel"],
+      "caller": {
+        "supportsTopLevelAwait": true
+      }
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/internal-regex": "^next/"
+  },
+  // "overrides": [
+  //   {
+  //     "files": ["test/**/*.js", "test/**/*.ts", "**/*.test.ts"],
+  //     "extends": ["plugin:jest/recommended"],
+  //     "rules": {
+  //       "jest/expect-expect": "off",
+  //       "jest/no-disabled-tests": "off",
+  //       "jest/no-conditional-expect": "off",
+  //       "jest/valid-title": "off",
+  //       "jest/no-interpolation-in-snapshots": "off",
+  //       "jest/no-export": "off"
+  //     }
+  //   },
+  //   { "files": ["**/__tests__/**"], "env": { "jest": true } },
+  //   {
+  //     "files": ["examples/**/*"],
+  //     "rules": {
+  //       "import/no-anonymous-default-export": [
+  //         "error",
+  //         {
+  //           "allowArrowFunction": false,
+  //           "allowAnonymousClass": false,
+  //           "allowAnonymousFunction": false,
+  //           "allowArray": true,
+  //           "allowCallExpression": true,
+  //           "allowLiteral": true,
+  //           "allowObject": true
+  //         }
+  //       ]
+  //     }
+  //   },
+  //   {
+  //     "files": ["packages/**"],
+  //     "excludedFiles": [
+  //       "packages/next/taskfile*.js",
+  //       "packages/next/webpack.config.js"
+  //     ],
+  //     "rules": {
+  //       "no-shadow": ["warn", { "builtinGlobals": false }],
+  //       "import/no-extraneous-dependencies": [
+  //         "error",
+  //         { "devDependencies": false }
+  //       ]
+  //     }
+  //   },
+  //   {
+  //     "files": ["packages/**/*.tsx", "packages/**/*.ts"],
+  //     "rules": {
+  //       "no-shadow": "off",
+  //       "@typescript-eslint/no-shadow": ["warn", { "builtinGlobals": false }]
+  //     }
+  //   }
+  // ],
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error", "info"] }],
     "no-unused-vars": "error",
-    "@next/next/no-document-import-in-page": "off",
     "import/no-anonymous-default-export": "error",
-    // "import/no-unused-modules": [1, { "unusedExports": true }], // Dùng để kiểm tra các module không sử dụng
+    // "import/no-unused-modules": [1, { "unusedExports": true }], // TODO: Check unused modules (Kiểm tra module không sử dụng)
     "no-undef": "off",
     "object-curly-spacing": "off",
-    "require-jsdoc": "off",
     "max-len": "off",
     "indent": "off",
     "no-useless-catch": "off",
