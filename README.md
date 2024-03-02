@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS VibeVerse | Comic
 
-## Getting Started
+![VibeVerse Comic Dev Card](https://api.daily.dev/devcards/v2/5vha6L5SMkH4OkdZ88cHR.png?type=default&r=31s)
 
-First, run the development server:
+A powerful NextJS VibeVerse developed following the Feature-driven pattern.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Members 🌟
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+    <img src="https://api.daily.dev/devcards/v2/5vha6L5SMkH4OkdZ88cHR.png?type=default&r=31s" width="356" alt="VibeVerse Comic Dev Card"/>
+    <img src="https://api.daily.dev/devcards/v2/5vha6L5SMkH4OkdZ88cHR.png?type=default&r=31s" width="356" alt="VibeVerse Comic Dev Card"/>
+</p>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Core Values 🔥
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Always write clean code
+- Think before coding
+- Code with heart
+- Ready to teach each other
+- Take responsibility for work
+- Actively discuss
 
-## Learn More
+## Live Website 🚀
 
-To learn more about Next.js, take a look at the following resources:
+Visit the live website [here](#).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Screenshots 📸
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Project Screenshot](#)
 
-## Deploy on Vercel
+## Features 🧐
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_Coming soon..._
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Folder Structure 📂
+
+_Coming soon..._
+
+## Commit Rules 💉
+
+Branch naming conventions:
+
+- `build/`: For build-related changes
+- `chore/`: For maintenance tasks
+- `ci/`: For continuous integration
+- `docs/`: For documentation updates
+- `feat/`: For new features
+- `fix/`: For bug fixes
+- `perf/`: For performance improvements
+- `refactor/`: For code refactoring
+- `revert/`: For reverting changes
+- `style/`: For styling
+- `test/`: For tests
+
+Example: `feat: add new commit`
+
+## Branch Rules 🤟
+
+Branch naming conventions:
+
+- `feat/`: For new features
+- `feedback/`: For feedback implementation
+- `hotfix/`: For urgent fixes
+- `revert/`: For reverting changes
+- `reset/`: For resetting development
+- `force/`: For forced updates
+- `refactor/`: For code refactoring
+- `fix/`: For bug fixes
+
+Example: `git checkout -b feat/feature-a`
+
+Note: Underscores are not allowed!
+
+## Installation Steps 🛠️
+
+1. **Clone the project**
+
+   ```sh
+   git clone git@github.com:lilwxs/__graduationThesis_VibeVerse.git
+   ```
+
+2. **Navigate to the project directory**
+
+   ```sh
+   cd __graduationThesis_VibeVerse
+   ```
+
+3. **Install dependencies**
+
+   ```sh
+   yarn install
+   ```
+
+4. **Start the server**
+
+   ```sh
+   yarn dev
+   ```
+
+## Contribution Guidelines 🍰
+
+Please review our Contribution Guidelines before making a contribution.
+
+[CONTRIBUTING](https://github.com/lilwxs/__graduationThesis_VibeVerse/blob/main/CONTRIBUTING.md)
+
+## Built with 💻
+
+Technologies used in the project:
+
+- NextJS
+- shadcn/ui
+- React Query
+- Commit lint
+- Eslint
+- Prettier
+- Vitest
+
+## License 🛡️
+
+This project is licensed under the [MIT License](./LICENSE).

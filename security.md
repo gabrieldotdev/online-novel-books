@@ -23,7 +23,7 @@ Security updates will be issued for supported versions in response to verified s
 
 ## Reporting a Non-Security Issue
 
-If you find bugs or other non-security related issues, please open a regular [issue on GitHub](https://github.com/lilwxs/__graduationThesis/issues).
+If you find bugs or other non-security related issues, please open a regular [issue on GitHub](https://github.com/lilwxs/__graduationThesis_VibeVerse/issues).
 
 ## Code of Conduct
 

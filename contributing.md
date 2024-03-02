@@ -1,4 +1,4 @@
-# Contributing to [NextJS VibeVerse](https://github.com/lilwxs/__graduationThesis)
+# Contributing to [NextJS VibeVerse](https://github.com/lilwxs/__graduationThesis_VibeVerse)
 
 Thank you for your interest in contributing to NextJS VibeVerse! We welcome contributions from the community to make our project better.
 
@@ -12,7 +12,7 @@ This project and everyone participating in it are governed by our [Code of Condu
 
 ### Reporting Bugs
 
-If you find a bug, please open an issue on our [issue tracker](https://github.com/lilwxs/__graduationThesis/issues). Include detailed information about how to reproduce the bug, and what happened.
+If you find a bug, please open an issue on our [issue tracker](https://github.com/lilwxs/__graduationThesis_VibeVerse/issues). Include detailed information about how to reproduce the bug, and what happened.
 
 ### Suggesting Enhancements
 
@@ -38,7 +38,7 @@ Follow our coding standards when making changes to the codebase. Include a link 
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the project's [license](https://github.com/lilwxs/__graduationThesis/blob/main/LICENSE).
+By contributing to this project, you agree that your contributions will be licensed under the project's [license](https://github.com/lilwxs/__graduationThesis_VibeVerse/blob/main/LICENSE).
 
 ## Contact
 
