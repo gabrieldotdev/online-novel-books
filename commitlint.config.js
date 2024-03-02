@@ -33,6 +33,7 @@ const Configuration = {
         'ci', // Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) (Thay đổi tới tập tin cấu hình CI và kịch bản của chúng tôi (phạm vi ví dụ: Travis, Circle, BrowserStack, SauceLabs))
         'chore', // Other changes that don't modify src or test files (Những thay đổi khác không sửa đổi tệp src hoặc test)
         'revert', // Reverts a previous commit (Hoàn nguyên một commit trước đó)
+        'force', // Force commit (Commit bắt buộc)
       ],
     ],
   },
@@ -147,6 +148,11 @@ const Configuration = {
             description: 'Reverts a previous commit',
             title: 'Reverts',
             emoji: '🗑',
+          },
+          force: {
+            description: 'Force commit',
+            title: 'Force',
+            emoji: '🔥',
           },
         },
       },

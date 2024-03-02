@@ -1,6 +1,6 @@
 # NextJS VibeVerse | Comic
 
-![VibeVerse Comic Dev Card](https://api.daily.dev/devcards/v2/5vha6L5SMkH4OkdZ88cHR.png?type=default&r=31s)
+![VibeVerse Comic Dev Card](./public/icon.svg)
 
 A powerful NextJS VibeVerse developed following the Feature-driven pattern.
 
@@ -22,11 +22,11 @@ A powerful NextJS VibeVerse developed following the Feature-driven pattern.
 
 ## Live Website 🚀
 
-Visit the live website [here](#).
+Visit the live website [here](https://vibeverse-alpha.vercel.app/).
 
 ## Project Screenshots 📸
 
-![Project Screenshot](#)
+![Project Screenshot](./public/logo.svg)
 
 ## Features 🧐
 
