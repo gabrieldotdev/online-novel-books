@@ -1,0 +1,53 @@
+{
+  // Custom settings.
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.format": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.validate": ["css", "scss"],
+  // Formatting using Prettier by default for all languages (Dịch: Mặc định sử dụng Prettier để định dạng cho tất cả các ngôn ngữ)
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Formatting using Prettier for JavaScript, overrides VSCode default. (Dịch: Định dạng bằng Prettier cho JavaScript, ghi đè lên cài đặt mặc định của VSCode)
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Linting using ESLint. (Dịch: Kiểm tra lỗi sử dụng ESLint)
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // Disable Jest autoRun as otherwise it will start running all tests the first time. (Dịch: Tắt Jest autoRun vì nếu không nó sẽ chạy tất cả các bài kiểm tra lần đầu tiên)
+  "jest.autoRun": "off",
+  // Debugging. (Dịch: Gỡ lỗi)
+  "debug.javascript.unmapMissingSources": true,
+  "files.exclude": {
+    "*[!test]**/node_modules": true
+  },
+  // Ensure enough terminal history is preserved when running tests. (Dịch: Đảm bảo đủ lịch sử terminal được lưu khi chạy bài kiểm tra)
+  "terminal.integrated.scrollback": 10000,
+  // Configure todo-tree to exclude node_modules, dist, and compiled. (Dịch: Cấu hình todo-tree để loại trừ node_modules, dist, và compiled)
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules",
+    "**/dist",
+    "**/compiled"
+  ],
+  // Match TODO-APP in addition to other TODOs. (Dịch: Khớp TODO-APP ngoài các TODO khác)
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "TODO-APP"
+  ]
+}

@@ -1,0 +1,12 @@
+# editorconfig.org
+root = true
+
+[*]
+charset = utf-8 # The charset of the file
+end_of_line = lf # The end-of-line character
+indent_size = 2 # Number of spaces it takes to represent one level of indentation
+indent_style = space # How to indent the code
+insert_final_newline = false # Ensure that the file ends with a newline
+trim_trailing_whitespace = true # Remove any whitespace characters preceding newline characters
+
+[*.md]
