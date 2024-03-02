@@ -10,7 +10,7 @@ module.exports = {
       .map((filename) => (isWin ? filename : escape([filename])))
       .join(' ');
     return [
-      `prettier --with-node-modules --ignore-path .prettierignore_staged --write ${escapedFileNames}`,
+      `prettier --with-node-modules --ignore-path --write ${escapedFileNames}`,
       `eslint --no-ignore --max-warnings=0 --fix ${filenames
         .filter((file) => !eslint.isPathIgnored(file))
         .map((f) => `"${f}"`)
@@ -23,12 +23,13 @@ module.exports = {
       .map((filename) => (isWin ? filename : escape([filename])))
       .join(' ');
     return [
-      `prettier --with-node-modules --ignore-path .prettierignore_staged --write ${escapedFileNames}`,
+      `prettier --with-node-modules --ignore-path --write ${escapedFileNames}`,
       `git add ${escapedFileNames}`,
     ];
   },
 };
 
+// Escape a string to be used as a single argument in a shell command
 function escape(str) {
   const escaped = quote(str);
   return escaped.replace(/\\@/g, '@');

@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": ["next", "prettier", "next/core-web-vitals", "eslint:recommended"],
   "plugins": ["import", "prettier"],
   "rules": {
