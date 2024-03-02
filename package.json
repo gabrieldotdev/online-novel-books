@@ -13,6 +13,7 @@
     "lint-staged": "lint-staged",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
+    "stylelint": "stylelint '**/*.{css,scss}' --fix",
     "prepare": "husky && husky install"
   },
   "dependencies": {
@@ -37,7 +38,10 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "0.5.11",
+    "sass": "1.71.1",
     "shell-quote": "^1.8.1",
+    "stylelint": "16.2.1",
+    "stylelint-config-standard-scss": "13.0.0",
     "tailwindcss": "^3.3.0"
   }
 }
