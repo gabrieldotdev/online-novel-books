@@ -93,7 +93,7 @@ const flexItemVariants = cva('flex flex-col', {
   },
 });
 
-const titleVariants = cva('tracking-tight inline font-semibold', {
+const titleVariants = cva('tracking-tight inline font-medium', {
   variants: {
     color: {
       vol: 'from-[#d62828] to-[#e07a5f]',

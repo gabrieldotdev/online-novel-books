@@ -32,6 +32,12 @@ export default function Home() {
           </a>
         </div>
       </div>
+      <p className="fixed right-0 bottom-0 flex w-full justify-center border-t border-gray-300 bg-gradient-to-t from-zinc-200 pt-6 pb-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        Powered by&nbsp; Lorem ipsum dolor sit, amet consectetur adipisicing
+        elit. Velit voluptates consequatur repellendus a cum aliquid
+        consequuntur corrupti totam atque laborum. Ipsum necessitatibus saepe
+        atque expedita itaque minus odio dolor culpa!
+      </p>
     </main>
   );
 }
