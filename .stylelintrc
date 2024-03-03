@@ -3,8 +3,12 @@
   "rules": {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": null,
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": ["global"]
-    }]
+    "no-invalid-position-at-import-rule": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   }
 }
