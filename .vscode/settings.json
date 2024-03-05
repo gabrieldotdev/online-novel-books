@@ -10,7 +10,12 @@
     "source.fixAll.format": "explicit",
     "source.fixAll.stylelint": "explicit"
   },
-  "stylelint.validate": ["css", "scss"],
+  // ESLint settings. (Cài đặt ESLint)
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   // Formatting using Prettier by default for all languages (Dịch: Mặc định sử dụng Prettier để định dạng cho tất cả các ngôn ngữ)
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // Formatting using Prettier for JavaScript, overrides VSCode default. (Dịch: Định dạng bằng Prettier cho JavaScript, ghi đè lên cài đặt mặc định của VSCode)
@@ -24,8 +29,6 @@
     "typescript",
     "typescriptreact"
   ],
-  // Disable Jest autoRun as otherwise it will start running all tests the first time. (Dịch: Tắt Jest autoRun vì nếu không nó sẽ chạy tất cả các bài kiểm tra lần đầu tiên)
-  "jest.autoRun": "off",
   // Debugging. (Dịch: Gỡ lỗi)
   "debug.javascript.unmapMissingSources": true,
   "files.exclude": {

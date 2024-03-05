@@ -1,101 +1,34 @@
 {
+  "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
-  "parser": "@babel/eslint-parser",
-  "extends": ["next", "prettier", "next/core-web-vitals", "eslint:recommended"],
-  "plugins": ["react", "react-hooks", "import", "prettier"],
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "node": true
-    // "jest": true
-  },
-  "parserOptions": {
-    "requireConfigFile": false,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "babelOptions": {
-      "presets": ["next/babel"],
-      "caller": {
-        "supportsTopLevelAwait": true
-      }
-    }
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "prettier",
+    "turbo"
+  ],
+  "plugins": ["prettier", "react"],
+  "rules": {
+    // Next.js
+    "@next/next/no-html-link-for-pages": "off",
+    // React
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   },
   "settings": {
-    "react": {
-      "version": "detect"
+    "tailwindcss": {
+      "callees": ["cn", "cva"],
+      "config": "tailwind.config.cjs"
     },
-    "import/internal-regex": "^next/"
+    "next": {
+      "rootDir": ["apps/*/"]
+    }
   },
-  // "overrides": [
-  //   {
-  //     "files": ["test/**/*.js", "test/**/*.ts", "**/*.test.ts"],
-  //     "extends": ["plugin:jest/recommended"],
-  //     "rules": {
-  //       "jest/expect-expect": "off",
-  //       "jest/no-disabled-tests": "off",
-  //       "jest/no-conditional-expect": "off",
-  //       "jest/valid-title": "off",
-  //       "jest/no-interpolation-in-snapshots": "off",
-  //       "jest/no-export": "off"
-  //     }
-  //   },
-  //   { "files": ["**/__tests__/**"], "env": { "jest": true } },
-  //   {
-  //     "files": ["examples/**/*"],
-  //     "rules": {
-  //       "import/no-anonymous-default-export": [
-  //         "error",
-  //         {
-  //           "allowArrowFunction": false,
-  //           "allowAnonymousClass": false,
-  //           "allowAnonymousFunction": false,
-  //           "allowArray": true,
-  //           "allowCallExpression": true,
-  //           "allowLiteral": true,
-  //           "allowObject": true
-  //         }
-  //       ]
-  //     }
-  //   },
-  //   {
-  //     "files": ["packages/**"],
-  //     "excludedFiles": [
-  //       "packages/next/taskfile*.js",
-  //       "packages/next/webpack.config.js"
-  //     ],
-  //     "rules": {
-  //       "no-shadow": ["warn", { "builtinGlobals": false }],
-  //       "import/no-extraneous-dependencies": [
-  //         "error",
-  //         { "devDependencies": false }
-  //       ]
-  //     }
-  //   },
-  //   {
-  //     "files": ["packages/**/*.tsx", "packages/**/*.ts"],
-  //     "rules": {
-  //       "no-shadow": "off",
-  //       "@typescript-eslint/no-shadow": ["warn", { "builtinGlobals": false }]
-  //     }
-  //   }
-  // ],
-  "rules": {
-    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
-    "no-unused-vars": "error",
-    "import/no-anonymous-default-export": "error",
-    // "import/no-unused-modules": [1, { "unusedExports": true }], // TODO: Check unused modules (Kiểm tra module không sử dụng)
-    "no-undef": "off",
-    "object-curly-spacing": "off",
-    "max-len": "off",
-    "indent": "off",
-    "no-useless-catch": "off",
-    "camelcase": "off",
-    "new-cap": "off",
-    "operator-linebreak": "off",
-    "quotes": "off",
-    "comma-spacing": "off"
-  }
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "parser": "@babel/eslint-parser"
+    }
+  ]
 }
