@@ -1,10 +1,7 @@
 {
   "recommendations": [
     // Linting / Formatting
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
-    "stylelint.vscode-stylelint",
     "usernamehw.errorlens",
 
     // Testing (Dùng để chạy test, xem kết quả test, ...)
@@ -12,9 +9,6 @@
 
     // PR management / Reviewing code (Dùng để tạo PR, review PR, ...)
     "github.vscode-pull-request-github",
-
-    // Showing todo comments in code (Dùng để hiển thị TODO, FIXME, ...)
-    "gruntfuggly.todo-tree",
 
     // Collaborating with others (Dùng để chia sẻ code, pair programming, ...)
     "ms-vsliveshare.vsliveshare",
