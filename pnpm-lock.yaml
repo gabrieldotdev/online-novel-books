@@ -23,6 +23,16 @@ importers:
       turbo:
         specifier: ^1.12.5
         version: 1.12.5
+    devDependencies:
+      autoprefixer:
+        specifier: ^10.0.1
+        version: 10.4.18(postcss@8.4.35)
+      postcss:
+        specifier: ^8
+        version: 8.4.35
+      tailwindcss:
+        specifier: ^3.3.0
+        version: 3.4.1
 
   apps/www:
     dependencies:
@@ -42,9 +52,6 @@ importers:
       '@vibeverse/tailwind':
         specifier: workspace:*
         version: link:../../packages/tailwind
-      autoprefixer:
-        specifier: ^10.0.1
-        version: 10.4.18(postcss@8.4.35)
       postcss:
         specifier: ^8
         version: 8.4.35

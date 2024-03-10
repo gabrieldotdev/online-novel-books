@@ -1,5 +1,4 @@
-import sharedConfig from "@vibeverse/tailwind";
-// import sharedConfig from "../../packages/tailwind/tailwind.config.js";
+const sharedConfig = require("../../tailwind.config.cjs/index.js");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
