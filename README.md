@@ -1,6 +1,6 @@
 # NextJS VibeVerse | Comic
 
-![VibeVerse Comic Dev Card](./public/icon.svg)
+![VibeVerse Comic Dev Card](./apps/client/public/icon.svg)
 
 A powerful NextJS VibeVerse developed following the Feature-driven pattern.
 
