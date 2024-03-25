@@ -1,4 +1,4 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
+// import { fontFamily } from "tailwindcss/defaultTheme";
 import { withUt } from "uploadthing/tw";
 
 /** @type {import('tailwindcss').Config} */
@@ -61,10 +61,10 @@ export default withUt({
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+      // fontFamily: {
+        // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         // mono: ["var(--font-mono)", ...fontFamily.mono],
-      },
+      // },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
