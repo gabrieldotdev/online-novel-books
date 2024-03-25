@@ -16,7 +16,7 @@ import { Input } from "@/islands/primitives/input";
 import { toast } from "@/islands/primitives/use-toast";
 import { cls } from "@/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Github, LoaderCircle } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 export function UserAuthForm({ className, ...props }) {
@@ -119,12 +119,12 @@ export function UserAuthForm({ className, ...props }) {
       {/* <UserFormWith isLoading={isLoading} /> */}
       <div className="flex gap-2">
         <Button variant="outline" type="button" disabled={isLoading}>
-          {isLoading ? (
-            <LoaderCircle className="h-4 w-4 animate-spin" />
-          ) : (
-            // <Github className="mr-2 h-4 w-4" />
-            <Icons.google className="h-4 w-4" />
-          )}{" "}
+          {
+            isLoading ?
+              <LoaderCircle className="h-4 w-4 animate-spin" />
+              // <Github className="mr-2 h-4 w-4" />
+            : <Icons.google className="h-4 w-4" />
+          }{" "}
         </Button>
         <Button
           variant="outline"
@@ -132,11 +132,9 @@ export function UserAuthForm({ className, ...props }) {
           disabled={isLoading}
           className="w-full"
         >
-          {isLoading ? (
+          {isLoading ?
             <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <Icons.gitHub className="mr-2 h-4 w-4" />
-          )}{" "}
+          : <Icons.gitHub className="mr-2 h-4 w-4" />}{" "}
           GitHub
         </Button>
       </div>

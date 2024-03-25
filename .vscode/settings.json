@@ -25,7 +25,13 @@
     "**/node_modulesDISABLE": true
   },
   "cSpell.enabled": true,
-  "cSpell.words": ["hoagnthaininh", "hookform", "Sonner", "uploadthing"],
+  "cSpell.words": [
+    "clsx",
+    "hoagnthaininh",
+    "hookform",
+    "Sonner",
+    "uploadthing"
+  ],
   "editor.unicodeHighlight.allowedCharacters": {
     "a": true,
     "а": true,

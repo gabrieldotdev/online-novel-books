@@ -70,12 +70,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         toasts: state.toasts.map((t) =>
-          t.id === toastId || toastId === undefined
-            ? {
-                ...t,
-                open: false,
-              }
-            : t,
+          t.id === toastId || toastId === undefined ?
+            {
+              ...t,
+              open: false,
+            }
+          : t,
         ),
       };
     }
