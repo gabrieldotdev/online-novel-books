@@ -1,4 +1,4 @@
-import { typography } from "@/server/text";
+import { typography } from "@/islands/primitives/text";
 
 export default function PageLayout({ children, title }) {
   return (

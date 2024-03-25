@@ -10,7 +10,6 @@ export default withUt({
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./islands/**/*.{js,ts,jsx,tsx,mdx}",
     "./themes/**/*.{js,ts,jsx,tsx,mdx}",
-    "./server/**/*.{js,ts,jsx,tsx,mdx}",
     "./core/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
@@ -62,8 +61,8 @@ export default withUt({
         },
       },
       // fontFamily: {
-        // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        // mono: ["var(--font-mono)", ...fontFamily.mono],
+      // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+      // mono: ["var(--font-mono)", ...fontFamily.mono],
       // },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,10 +78,26 @@ export default withUt({
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "slideInDown": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        "slideOutUp": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+        "jump": {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-3px)" },
+          "to": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slideInDown": "slideInDown 0.3s ease-out",
+        "slideOutUp": "slideOutUp 0.3s ease-out",
+        "jump": "jump 0.3s",
       },
     },
   },

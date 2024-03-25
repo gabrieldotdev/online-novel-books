@@ -1,8 +1,10 @@
-import { Moon, Sun } from "lucide-react";
+import { ArrowRight, LoaderCircleIcon, Moon, Sun } from "lucide-react";
 
 export const Icons = {
-  sun: Sun,
-  moon: Moon,
+  sun: (props) => <Sun {...props} />,
+  moon: (props) => <Moon {...props} />,
+  loaderCircle: (props) => <LoaderCircleIcon {...props} />,
+  arrowRight: (props) => <ArrowRight {...props} />,
   nextjs: (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path

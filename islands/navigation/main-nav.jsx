@@ -1,7 +1,9 @@
-import React from 'react'
-
-export function MainNav() {
+export function MainNav({ items }) {
   return (
-    <div>MainNav</div>
-  )
+    <div className="flex items-center space-x-4">
+      {items.map((item) => (
+        <h2 key={item.title}>{item.title}</h2>
+      ))}
+    </div>
+  );
 }

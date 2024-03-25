@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { UserWithOption } from "@/core/shared/islands/user-with-option";
 import { authSchema } from "@/data/validations/auth";
 import { Icons } from "@/islands/icons";
 import { Button } from "@/islands/primitives/button";
@@ -100,7 +101,7 @@ export function UserAuthForm({ className, ...props }) {
           />
           <Button disabled={isLoading} type="submit">
             {isLoading && (
-              <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+              <Icons.loaderCircle className="mr-2 h-4 w-4 animate-spin" />
             )}
             Continue with Email
           </Button>
@@ -116,28 +117,7 @@ export function UserAuthForm({ className, ...props }) {
           </span>
         </div>
       </div>
-      {/* <UserFormWith isLoading={isLoading} /> */}
-      <div className="flex gap-2">
-        <Button variant="outline" type="button" disabled={isLoading}>
-          {
-            isLoading ?
-              <LoaderCircle className="h-4 w-4 animate-spin" />
-              // <Github className="mr-2 h-4 w-4" />
-            : <Icons.google className="h-4 w-4" />
-          }{" "}
-        </Button>
-        <Button
-          variant="outline"
-          type="button"
-          disabled={isLoading}
-          className="w-full"
-        >
-          {isLoading ?
-            <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
-          : <Icons.gitHub className="mr-2 h-4 w-4" />}{" "}
-          GitHub
-        </Button>
-      </div>
+      <UserWithOption isLoading={isLoading} />
     </div>
   );
 }
