@@ -26,13 +26,12 @@ export const siteConfig = {
   mainNav: [
     {
       title: "About Us",
-      href: "/about-us",
-      external: false,
+      href: "/about",
+      items: [],
     },
     {
       title: "Dashboard",
       href: "/dashboard",
-      external: false,
       items: [
         {
           title: "Authentication",
@@ -79,13 +78,11 @@ export const siteConfig = {
     {
       title: "Sign In",
       href: "/auth/login",
-      external: false,
       items: [],
     },
     {
       title: "Premium",
       href: "/faq",
-      external: true,
       items: [
         {
           title: "General",
@@ -108,8 +105,44 @@ export const siteConfig = {
     {
       title: "Changelog",
       href: "/changelog",
+      items: [],
+    },
+    {
+      title: "Github",
+      href: "https://github/lilwxs",
       external: true,
       items: [],
+    },
+  ],
+  extraNav: [
+    {
+      title: "Documentation",
+      href: "/docs",
+      icon: ":bird:",
+      items: [],
+    },
+    {
+      title: "Testimonials",
+      href: "/testimonials",
+      icon: ":star:",
+      items: [
+        {
+          title: "General",
+          href: "/testimonials/general",
+        },
+        {
+          title: "Billing",
+          href: "/testimonials/billing",
+        },
+        {
+          title: "Security",
+          href: "/testimonials/security",
+        },
+        {
+          title: "Support",
+          href: "/testimonials/support",
+        },
+      ],
     },
   ],
   admNav: [
