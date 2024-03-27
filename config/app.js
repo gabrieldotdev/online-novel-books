@@ -39,4 +39,5 @@ export const DISCORD_URL = "";
 
 export const settings = {
   themeToggleEnabled: true,
+  loop: true,
 };
