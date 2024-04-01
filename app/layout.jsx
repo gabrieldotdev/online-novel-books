@@ -1,38 +1,22 @@
 import "@/styles/globals.scss";
 
-import { siteConfig } from "@/config/site";
-import { fullURL } from "@/data/meta/builder";
+import { DEFAULT_METADATA } from "@/data/meta";
+import { BasicAnnouncement } from "@/islands/basic-announcement";
+import { MultilayeredAnnouncement } from "@/islands/multilayered-announcement";
 import { NextThemesProvider } from "@/islands/providers/theme-provider";
-import { SingleToaster } from "@/islands/single-toaster";
-import { SonnerToaster } from "@/islands/sonner-toaster";
-import { fontSans } from "@/styles/fonts";
+import { siteConfig } from "@/settings/app";
+import { geistSans } from "@/styles/fonts";
 import { cls } from "@/utils";
 
 export const metadata = {
-  metadataBase: fullURL(),
+  ...DEFAULT_METADATA,
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  creator: siteConfig.author,
-  publisher: siteConfig.author,
-  authors: [
-    {
-      name: siteConfig.author,
-      url: siteConfig.url.author,
-    },
-  ],
-  applicationName: siteConfig.name,
-  alternates: {
-    canonical: fullURL(),
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    // shortcut: "/favicon-16x16.png",
-    // apple: "/apple-touch-icon.png",
+  openGraph: {
+    ...DEFAULT_METADATA.openGraph,
+    url: siteConfig.url.base,
   },
 };
 
@@ -40,21 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body
-        className={cls(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.className,
-        )}
-      >
-        <NextThemesProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className={cls("min-h-screen bg-background font-sans antialiased mx-auto w-full max-w-[2560px]", geistSans.className)}>
+        <NextThemesProvider attribute="class" defaultTheme="system" enableSystems disableTransitionOnChange>
           {children}
-          <SingleToaster />
-          <SonnerToaster />
+          <BasicAnnouncement />
+          <MultilayeredAnnouncement />
         </NextThemesProvider>
       </body>
     </html>

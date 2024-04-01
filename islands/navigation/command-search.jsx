@@ -2,18 +2,11 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { siteConfig } from "@/config/site";
 import { Button } from "@/islands/primitives/button";
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/islands/primitives/command";
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/islands/primitives/command";
+import { siteConfig } from "@/settings/app";
 import { cls } from "@/utils";
-import { FileIcon, SearchIcon } from "lucide-react";
+import { FileIcon } from "lucide-react";
 
 import { Icons } from "../icons";
 
@@ -39,7 +32,6 @@ export default function CommandSearch({
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
@@ -55,9 +47,7 @@ export default function CommandSearch({
           "relative flex items-center justify-start rounded-lg shadow-none",
           "w-full h-8 sm:pr-12 md:w-40 lg:w-64",
           "text-xs font-medium ring-1",
-          isSticky
-            ? "bg-black/5 hover:bg-foreground/10 text-foreground/60 ring-foreground/20"
-            : "bg-white/5 hover:bg-white/10 text-white/60 ring-white/20",
+          isSticky ? "bg-black/5 hover:bg-foreground/10 text-foreground/60 ring-foreground/20" : "bg-white/5 hover:bg-white/10 text-white/60 ring-white/20",
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -78,13 +68,13 @@ export default function CommandSearch({
               .map((navItem) => (
                 <CommandItem
                   key={navItem.href}
-                  value={navItem.title}
+                  value={navItem.label}
                   onSelect={() => {
                     runCommand(() => router.push(navItem.href));
                   }}
                 >
                   <FileIcon className="mr-2 h-4 w-4" />
-                  {navItem.title}
+                  {navItem.label}
                 </CommandItem>
               ))}
           </CommandGroup>

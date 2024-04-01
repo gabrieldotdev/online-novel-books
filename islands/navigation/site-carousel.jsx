@@ -1,87 +1,61 @@
 "use client";
 
 import * as React from "react";
-import { CarouselCards } from "@/islands/navigation/carousels/carousel-cards";
+import Image from "next/image";
 import { cls } from "@/utils";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 
-import CarouselSwitcherButton from "./carousels/carousel-switcher-button";
+import { Button } from "../primitives/button";
 
-const carousels = [
-  {
-    title: "Your call has been confirmed.",
-    label: "Tuyệt thế mỹ nam",
-    imageUrl: "/images/test_carousel.jpg",
-    description: "1 hour ago",
-  },
-  {
-    title: "You have a new message!",
-    label: "Cửa châu đại lục",
-    imageUrl: "/images/test_carousel.jpg",
-    description: "1 hour ago",
-  },
-  {
-    title: "Your call has been confirmed.",
-    label: "Alo sư phụ",
-    imageUrl: "/images/test_carousel.jpg",
-    description: "1 hour ago",
-  },
-  {
-    title: "You have a new message!",
-    label: "Hệ thống cấp bậc",
-    imageUrl: "/images/test_carousel.jpg",
-    description: "1 hour ago",
-  },
-  {
-    title: "Your call has been confirmed.",
-    label: "Đại chiến thần thú",
-    imageUrl: "/images/test_carousel.jpg",
-    description: "1 hour ago",
-  },
-];
-
-export function SiteCarousel() {
+export default function SiteCarousel() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
-  const autoplayRef = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ playOnInit: true, delay: 2000 })]);
+
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+    containScroll: "keepSnaps",
+    dragFree: true,
+  });
+
+  const onThumbClick = React.useCallback(
+    (index) => {
+      if (!emblaApi || !emblaThumbsApi) return;
+      emblaApi.scrollTo(index);
+    },
+    [emblaApi, emblaThumbsApi],
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    autoplayRef.current,
-  ]);
+  const onSelect = React.useCallback(() => {
+    if (!emblaApi || !emblaThumbsApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaThumbsApi.scrollTo(emblaApi.selectedScrollSnap());
+  }, [emblaApi, emblaThumbsApi, setSelectedIndex]);
 
   React.useEffect(() => {
-    if (emblaApi) {
-      emblaApi.on("select", () => {
-        setSelectedIndex(emblaApi.selectedScrollSnap());
-      });
-    }
-  }, [emblaApi]);
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
-    <section className="mx-auto flex-auto justify-center" ref={emblaRef}>
-      <div className="mx-auto flex">
-        {carousels.map((carousel, index) => (
-          <CarouselCards
-            key={index}
-            title={carousel.title}
-            description={carousel.description}
-            imageUrl={carousel.imageUrl}
-            selectedIndex={selectedIndex === index}
-          />
-        ))}
+    <div className="max-w-[48rem] m-auto">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex ml-[calc(1rem) * -1]">
+          {Array.from(Array(10).keys()).map((index) => (
+            <Image src="/assets/images/channel_Bg.jpg" alt="" width={400} height={200} style={{ width: "100%", height: "100%" }} className="object-cover w-full h-full" />
+          ))}
+        </div>
       </div>
-      {/* // <nav className="flex justify-center mt-4 space-x-3">
-    //   {carousels.map((_, index) => (
-    //     <CarouselSwitcherButton
-    //       key={index}
-    //       label={_.label}
-    //       selectedIndex={selectedIndex === index}
-    //       handleScrollTo={() => emblaApi.scrollTo(index)}
-    //     />
-    //   ))}
-    // </nav> */}
-    </section>
+      <div className="mt-[0.8rem]">
+        <div className="overflow-hidden" ref={emblaThumbsRef}>
+          <div className="flex flex-row ml-[calc(0.8rem)*-1]">
+            {Array.from(Array(10).keys()).map((index) => (
+              <Button key={index} className={cls("flex-shrink-0 w-8 h-8 bg-white border border-gray-300", selectedIndex === index && "bg-red-400")} onClick={() => onThumbClick(index)} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -4,14 +4,7 @@ import { withUt } from "uploadthing/tw";
 /** @type {import('tailwindcss').Config} */
 export default withUt({
   darkMode: ["class"],
-  content: [
-    "./public/**/*.html",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./islands/**/*.{js,ts,jsx,tsx,mdx}",
-    "./themes/**/*.{js,ts,jsx,tsx,mdx}",
-    "./core/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./pages/**/*.{js,ts,jsx,tsx,mdx}", "./islands/**/*.{js,ts,jsx,tsx,mdx}", "./src/**/*.{js,ts,jsx,tsx,mdx}"],
   prefix: "",
   theme: {
     container: {
@@ -22,9 +15,6 @@ export default withUt({
       },
     },
     extend: {
-      flex: {
-        full: "0 0 100%",
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -61,8 +51,8 @@ export default withUt({
         },
       },
       // fontFamily: {
-      // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-      // mono: ["var(--font-mono)", ...fontFamily.mono],
+      //   sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+      //   mono: ["var(--font-mono)", ...fontFamily.mono],
       // },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,14 +68,6 @@ export default withUt({
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "slideInDown": {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-        "slideOutUp": {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-100%)" },
-        },
         "jump": {
           "0%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-3px)" },
@@ -95,8 +77,6 @@ export default withUt({
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "slideInDown": "slideInDown 0.3s ease-out",
-        "slideOutUp": "slideOutUp 0.3s ease-out",
         "jump": "jump 0.3s",
       },
     },

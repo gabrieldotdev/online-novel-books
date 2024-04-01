@@ -1,47 +1,69 @@
-# Contributing to [NextJS VibeVerse](https://github.com/lilwxs/__graduationThesis_VibeVerse)
+# Contributing to Bleverse Relivator
 
-Thank you for your interest in contributing to NextJS VibeVerse! We welcome contributions from the community to make our project better.
+[![Join the Bleverse Discord](https://discordapp.com/api/guilds/1075533942096150598/widget.png?style=banner2)][bleverse-discord]
 
-Before you start contributing, please take a moment to read the following guidelines.
+Welcome, and thank you for considering contributing to Bleverse Relivator! Your involvement is vital to the growth and success of this open-source initiative.
 
-## Code of Conduct
+## Getting Started
 
-This project and everyone participating in it are governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to hoangthaininh.hgn@gmail.com
+- **Fork and Setup**: Initiate your contribution journey by forking the repository. Follow the setup instructions in [README.md](/README.MD) for guidance.
+- **Code of Conduct**: Familiarize yourself with our [Code of Conduct](./CODE_OF_CONDUCT.md). Adherence to these principles is expected from all community members.
 
-## How Can I Contribute?
+## Contribution Guidelines
 
-### Reporting Bugs
+### Legal Compliance
 
-If you find a bug, please open an issue on our [issue tracker](https://github.com/lilwxs/__graduationThesis_VibeVerse/issues). Include detailed information about how to reproduce the bug, and what happened.
+- **Originality**: Ensure that your contributions are entirely your original work.
+- **Rights**: Verify that you hold the necessary rights to your contributions.
+- **License Adherence**: All contributions must align with the project's licensing terms.
 
-### Suggesting Enhancements
+### Pull Request Protocol
 
-If you have ideas on how to improve the project or new features you would like to see, feel free to open an issue labeled as an enhancement.
+- **UI Contributions**: For UI-related changes, utilize the [UI Pull Request Template](.github/issue_template/2.feature_request.yml). Include screenshots to facilitate the review process.
+- **General Contributions**: For other types of contributions, employ the [General Template](.github/issue_template/2.feature_request.yml). Provide a detailed description of your contribution.
 
-### Pull Requests
+### Bug Reporting Process
 
-We welcome your pull requests! Before submitting a pull request, please make sure to:
+#### Preliminary Steps
 
-1. Fork the repository and create a branch for your changes.
-2. Follow our coding standards (add link to coding standards).
-3. Write meaningful commit messages.
-4. Test your changes thoroughly.
-5. Update the documentation if necessary.
+- **Research**: Confirm that the bug has not been reported already.
+- **Comprehensive Information**: Compile all relevant details to accurately depict the issue.
 
-### Development Setup
+#### How to Submit a Bug Report
 
-Include information on how to set up the development environment locally, including dependencies and any special configuration.
+- **GitHub Issues**: Utilize [GitHub Issues](https://github.com/blefnk/relivator/issues/new) for reporting bugs.
+- **Clarity and Detail**: Clearly articulate both the expected and actual behaviors, and describe the steps to replicate the bug.
+- **Security Concerns**: For reporting security vulnerabilities, please contact us directly at [blefnk@gmail.com](mailto:blefnk@gmail.com) instead of using public channels.
 
-## Coding Standards
+### Enhancement Proposals
 
-Follow our coding standards when making changes to the codebase. Include a link to detailed coding standards documentation if available.
+#### Preliminary Considerations
 
-## License
+- **Version Check**: Ensure you're working with the latest version of the software.
+- **Existing Suggestions**: Search [GitHub Issues](https://github.com/blefnk/relivator/issues?q=) and our [Discord Suggestions Channel](https://discord.com/channels/1075533942096150598/1196425440777224212) to see if your suggestion has already been made.
+- **Project Alignment**: Assess whether your suggestion is in line with the project's objectives.
 
-By contributing to this project, you agree that your contributions will be licensed under the project's [license](https://github.com/lilwxs/__graduationThesis_VibeVerse/blob/main/LICENSE).
+#### How to Suggest Enhancements
 
-## Contact
+- **Descriptive Title**: Choose a title that succinctly describes the enhancement.
+- **Detailed Proposal**: Provide a step-by-step breakdown of the suggested enhancement.
+- **Justification**: Explain why this enhancement would be valuable to the project.
 
-If you have questions or need further assistance, feel free to contact us at hoangthaininh.hgn@gmail.com.
+### Making Your First Code Contribution
 
-Thank you for contributing to NextJS VibeVerse!
+1. **Issue Selection**: Choose an issue from [GitHub issues](https://github.com/blefnk/relivator/issues?q=) and request its assignment.
+2. **Fork and Branch Creation**: Fork the repository and create a new branch, naming it after the issue number.
+3. **Committing Changes**: Adhere to a clear commit style, referencing the issue in your PR or commit message.
+4. **Submitting a Pull Request**: Propose your changes through a pull request from your forked repository.
+
+## Additional Resources
+
+### Examples of Effective Commit Names
+
+| 🟢 Effective Example                                | 🟡 Less Effective Example | 🔴 Poor Example    |
+| --------------------------------------------------- | ------------------------- | ------------------ |
+| add(i18n): add internationalization support for RSC | added new stuff           | YOOOOOO            |
+| reposition cart for user convenience                | fixing cart issue         | fixing the thing   |
+| 📚 upd(docs): fix typos in README                   | doc updates               | (docs)Trust me bro |
+
+[bleverse-discord]: https://discord.gg/Pb8uKbwpsJ

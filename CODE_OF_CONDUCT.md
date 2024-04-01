@@ -1,53 +1,77 @@
-## Code of Conduct
+# Contributor Covenant Code of Conduct
 
-### Our Pledge
+## Our Pledge
 
-We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participating in our project and community a harassment-free experience for everyone, regardless of individual differences.
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+We commit to creating a friendly and respectful place for learning, teaching, and contributing. All participants in our community are expected to show respect and courtesy to others.
 
-### Our Standards
+## Our Standards
 
-Examples of behavior that contributes to a positive environment for our community include:
+**Positive Behaviors to Encourage:**
 
-- Demonstrating empathy and kindness toward other people
-- Being respectful of differing opinions, viewpoints, and experiences
-- Giving and gracefully accepting constructive feedback
-- Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-- Focusing on what is best not just for us as individuals, but for the overall community
+- Demonstrating empathy and kindness
+- Being respectful of varying opinions and viewpoints
+- Giving and receiving constructive feedback
+- Owning up to our mistakes and learning from them
+- Prioritizing community well-being and success
 
-Examples of unacceptable behavior include:
+**Unacceptable Behaviors Include:**
 
-- The use of sexualized language or imagery, and sexual attention or advances of any kind
-- Trolling, insulting or derogatory comments, and personal or political attacks
+- Use of sexualized language or imagery, and unwelcome sexual attention or advances
+- Trolling, insulting/derogatory comments, and personal or political attacks
 - Public or private harassment
-- Publishing others’ private information, such as a physical or email address, without their explicit permission
-- Other conduct which could reasonably be considered inappropriate in a professional setting
+- Publishing private information without consent
+- Inappropriate private contact without consent
+- Other conduct deemed unprofessional in a community setting
 
-### Enforcement Responsibilities
+## Enforcement Responsibilities
 
-Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Our community leaders are tasked with clarifying these standards and enforcing them, taking fair and appropriate action to address any instances of unacceptable behavior.
 
-Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Leaders have the authority to moderate comments, commits, code, and other contributions not in line with this Code of Conduct.
 
-### Scope
+## Scope
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+This Code of Conduct applies within all project spaces, and also when an individual is representing the project or its community in public spaces.
 
-### Enforcement
+## Enforcement Process
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project team responsible for enforcement at [hoangthaininh.hgn@gmail.com](mailto:hoangthaininh.hgn@gmail.com). All complaints will be reviewed and investigated promptly and fairly.
+Inappropriate behavior can be reported to community leaders at [blefnk@gmail.com](mailto:blefnk@gmail.com). All complaints will be reviewed and investigated and will result in a response deemed necessary and appropriate to the circumstances.
 
-All project maintainers are obligated to respect the privacy and security of the reporter of any incident.
+## Enforcement Guidelines
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+Leaders will follow these guidelines in determining consequences:
 
-### Attribution
+### 1. Correction
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1,
-available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct/][version]
+**Impact**: Inappropriate language or behavior.
 
-[homepage]: http://contributor-covenant.org
-[version]: https://www.contributor-covenant.org/version/2/1
+**Consequence**: Private warning and clarity on why the behavior was inappropriate. A public apology may be requested.
+
+### 2. Warning
+
+**Impact**: A single or series of violations.
+
+**Consequence**: A warning with consequences for continued behavior. No interaction with those involved for a set period, including community and external channels. Continued violation may lead to a ban.
+
+### 3. Temporary Ban
+
+**Impact**: Serious or sustained inappropriate behavior.
+
+**Consequence**: Temporary ban from interaction or public communication with the community. No interaction with those involved is allowed. Further violation may lead to a permanent ban.
+
+### 4. Permanent Ban
+
+**Impact**: Pattern of serious violations.
+
+**Consequence**: Permanent ban from public interaction within the community.
+
+## Attribution
+
+This Code of Conduct is adapted from the Contributor Covenant and Mozilla's code of conduct enforcement ladder.
+
+- [Contributor Covenant](https://contributor-covenant.org/version/2/0/code_of_conduct.html)
+- [Mozilla's Enforcement Ladder](https://github.com/mozilla/diversity)
+
+For FAQs and translations, visit [Contributor Covenant FAQ](https://contributor-covenant.org/faq) and [Translations](https://contributor-covenant.org/translations).

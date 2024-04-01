@@ -1,32 +1,28 @@
-import Image from "next/image";
-import { SiteCarousel } from "@/islands/navigation/site-carousel";
-import { ThemesGeneralSwitcher } from "@/islands/switchers/themes-general-switcher";
+import Link from "next/link";
+import SiteCarousel from "@/islands/navigation/site-carousel";
+import { labelVariants } from "@/islands/primitives/tw-variants";
+import { Boundary } from "@/islands/wrappers/boundary";
 import { Shell } from "@/islands/wrappers/shell-variants";
+import { cls } from "@/utils";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <Shell as="div">
-      <ThemesGeneralSwitcher />
-      <div className="grid grid-flow-col">
-        <div className="flex-none w-60 min-w-60 bg-sky-200">01</div>
-        <div className="overflow-hidden">
+      <div className="flex flex-col lg:flex-row space-x-2">
+        <Boundary size="small" className={cls("hidden lg:block flex-none w-64 min-w-64", "text-center", labelVariants())}>
+          <Link href="/about">
+            <h3>跃千愁新书：山海提灯</h3>
+          </Link>
+        </Boundary>
+        <div className="flex-initial w-full overflow-hidden">
           <SiteCarousel />
         </div>
-        <div className="flex-none w-60 min-w-60 bg-sky-200">01</div>
+        <Boundary size="small" className={cls("hidden lg:block flex-none w-64 min-w-64", "text-center", labelVariants())}>
+          <Link href="/about">
+            <h3>New Comics</h3>
+          </Link>
+        </Boundary>
       </div>
-
-      <main className="flex-col items-center justify-between p-24 flex">
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <Image
-            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-            src="/logo.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-      </main>
     </Shell>
   );
 }

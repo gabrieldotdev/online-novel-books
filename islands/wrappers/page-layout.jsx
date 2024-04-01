@@ -1,4 +1,4 @@
-import { typography } from "@/islands/primitives/text";
+import { typography } from "@/islands/primitives/tw-typography";
 
 export default function PageLayout({ children, title }) {
   return (

@@ -1,5 +1,5 @@
-import { siteConfig } from "@/config/site";
 import { fullURL } from "@/data/meta/builder";
+import { siteConfig } from "@/settings/app";
 
 export const DEFAULT_METADATA = {
   metadataBase: fullURL(),
@@ -10,14 +10,23 @@ export const DEFAULT_METADATA = {
   },
   description: siteConfig.description,
   openGraph: {
-    url: "/",
-    siteName: siteConfig.name,
-    locale: "en-US",
     type: "website",
+    locale: "en_US",
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1280,
+        height: 640,
+        alt: `${siteConfig.name} Website OG Image`,
+      },
+    ],
   },
-  twitter: {
-    creator: siteConfig.company.twitter,
-    site: siteConfig.handles.twitter,
-    card: "summary_large_image",
-  },
+  // twitter: {
+  //   creator: siteConfig.company.twitter,
+  //   site: siteConfig.handles.twitter,
+  //   card: "summary_large_image",
+  // },
 };

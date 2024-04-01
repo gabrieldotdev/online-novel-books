@@ -1,9 +1,6 @@
 {
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["tw=\"([^\"]*)\""]
-  ],
+  "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], ["tw=\"([^\"]*)\""]],
+  "scss.validate": false,
   "css.validate": false,
   "tailwindCSS.classAttributes": ["class", "className", "classNames"],
   "files.trimTrailingWhitespace": true,
@@ -25,15 +22,7 @@
     "**/node_modulesDISABLE": true
   },
   "cSpell.enabled": true,
-  "cSpell.words": [
-    "clsx",
-    "embla",
-    "hoagnthaininh",
-    "hookform",
-    "navitem",
-    "Sonner",
-    "uploadthing"
-  ],
+  "cSpell.words": ["camelcase", "classname", "cmdk", "Embla", "hoangthaninh", "navitem", "pnpx", "shadcn", "sonner", "uploadthing"],
   "editor.unicodeHighlight.allowedCharacters": {
     "a": true,
     "а": true,
@@ -63,15 +52,5 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml"
-  ]
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "html", "markdown", "json", "jsonc", "yaml", "toml"]
 }

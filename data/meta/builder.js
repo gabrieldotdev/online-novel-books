@@ -5,16 +5,12 @@
  */
 export function appHost(includeProtocol = true) {
   const host =
-    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000" ?
-      process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
-    : process.env.NEXT_PUBLIC_VERCEL_URL ?
-      `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000" ? process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
+    : process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}`
     : "";
 
-  return includeProtocol ? host : (
-      host.replace("https://", "").replace("http://", "")
-    );
+  return includeProtocol ? host : host.replace("https://", "").replace("http://", "");
 }
 
 /**
@@ -22,5 +18,5 @@ export function appHost(includeProtocol = true) {
  * @returns the URL for the given path.
  */
 export function fullURL(path = "", host = appHost()) {
-  return new URL(path, host);
+  return `${host}${path}`;
 }
