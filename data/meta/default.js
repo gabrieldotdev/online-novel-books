@@ -15,14 +15,14 @@ export const DEFAULT_METADATA = {
     description: siteConfig.description,
     siteName: siteConfig.name,
     title: siteConfig.name,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1280,
-        height: 640,
-        alt: `${siteConfig.name} Website OG Image`,
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "/og-image.png",
+    //     width: 1280,
+    //     height: 640,
+    //     alt: `${siteConfig.name} Website OG Image`,
+    //   },
+    // ],
   },
   // twitter: {
   //   creator: siteConfig.company.twitter,
