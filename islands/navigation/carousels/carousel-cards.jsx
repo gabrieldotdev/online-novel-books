@@ -22,7 +22,7 @@ export function CarouselCards({
     <Card
       className={cls(
         "relative flex-auto flex-shrink overflow-hidden",
-        "min-w-[13rem] w-full h-[16rem] ml-3",
+        "min-w-[30rem] w-full h-[16rem] ml-3",
         "duration-200 transform-gpu",
         selectedIndex ? "" : "my-4",
         className,

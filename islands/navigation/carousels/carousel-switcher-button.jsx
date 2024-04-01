@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/islands/primitives/button";
+import { Badge } from "@/islands/primitives/badge";
 import { cls } from "@/utils";
 
 export default function CarouselSwitcherButton({
@@ -10,9 +10,9 @@ export default function CarouselSwitcherButton({
   ...props
 }) {
   return (
-    <Button
+    <Badge
       className={cls(
-        "h-4 rounded-full text-xs font-semibold px-2 py-1.5",
+        "flex-grow-0 flex-shrink-0 cursor-pointer",
         selectedIndex
           ? "bg-primary"
           : "text-foreground hover:text-background bg-gray-200/60",
@@ -22,6 +22,6 @@ export default function CarouselSwitcherButton({
       {...props}
     >
       {label}
-    </Button>
+    </Badge>
   );
 }

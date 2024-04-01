@@ -35,7 +35,7 @@ export function SiteHeader() {
   }, [lastScrollTop]);
 
   return (
-    <header className="z-50 relative mx-auto min-h-52 w-full max-w-[2560px]">
+    <header className="z-50 relative mx-auto w-full max-w-[2560px]">
       <nav
         className={cls(
           "absolute flex px-6 w-full h-[3rem] items-center top-0 z-[1000]",
@@ -54,7 +54,7 @@ export function SiteHeader() {
         </div>
         {/* {settings.themeToggleEnabled && <ThemesGeneralSwitcher />} */}
       </nav>
-      <div className="relative z-0 h-44 max-h-44 w-full overflow-hidden">
+      <div className="relative z-0 h-40 max-h-40 w-full overflow-hidden">
         <Banner />
         <div className="absolute bottom-0 top-0 z-10 w-full">
           <div className="px-20 flex h-full items-end justify-between">

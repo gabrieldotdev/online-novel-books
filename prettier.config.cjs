@@ -1,5 +1,5 @@
 /** @typedef {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig */
-/** @typedef {import("prettier").Config} PrettierConfig */
+
 /**
  * Remember to restart VSCode after making
  * any changes here and saving this file.
