@@ -5,7 +5,7 @@ import { BasicAnnouncement } from "@/islands/basic-announcement";
 import { MultilayeredAnnouncement } from "@/islands/multilayered-announcement";
 import { NextThemesProvider } from "@/islands/providers/theme-provider";
 import { siteConfig } from "@/settings/app";
-import { geistSans } from "@/styles/fonts";
+import { fontJMono, geistSans } from "@/styles/fonts";
 import { cls } from "@/utils";
 
 export const metadata = {
@@ -24,7 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cls("min-h-screen bg-background font-sans antialiased mx-auto w-full max-w-[2560px]", geistSans.className)}>
+      <body
+        className={cls(
+          "min-h-screen bg-background font-sans antialiased mx-auto w-full max-w-[2560px]",
+          fontJMono.variable,
+        )}
+      >
         <NextThemesProvider attribute="class" defaultTheme="system" enableSystems disableTransitionOnChange>
           {children}
           <BasicAnnouncement />

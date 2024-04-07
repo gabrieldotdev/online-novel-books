@@ -1,5 +1,9 @@
 {
-  "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], ["tw=\"([^\"]*)\""]],
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw=\"([^\"]*)\""]
+  ],
   "scss.validate": false,
   "css.validate": false,
   "tailwindCSS.classAttributes": ["class", "className", "classNames"],
@@ -22,7 +26,21 @@
     "**/node_modulesDISABLE": true
   },
   "cSpell.enabled": true,
-  "cSpell.words": ["camelcase", "classname", "cmdk", "Embla", "hoangthaninh", "navitem", "pnpx", "shadcn", "sonner", "uploadthing"],
+  "cSpell.words": [
+    "camelcase",
+    "classname",
+    "cmdk",
+    "Embla",
+    "hoangthaininh",
+    "hoangthaninh",
+    "lerp",
+    "navitem",
+    "pnpx",
+    "shadcn",
+    "sonner",
+    "Truyen",
+    "uploadthing"
+  ],
   "editor.unicodeHighlight.allowedCharacters": {
     "a": true,
     "а": true,

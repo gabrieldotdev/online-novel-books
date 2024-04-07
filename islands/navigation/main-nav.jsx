@@ -22,7 +22,15 @@ export function MainNav({ items, isSticky }) {
           <HoverCard key={navItem.href}>
             <HoverCardTrigger asChild>
               <div className="group flex items-center h-full">
-                <Link href={navItem.href} target="_blank" className={cls("leading-[4rem] group-hover:animate-jump", labelVariants(), isActive(pathname, navItem.href) ? activeClass : "")}>
+                <Link
+                  href={navItem.href}
+                  target="_blank"
+                  className={cls(
+                    "leading-[4rem] group-hover:animate-jump",
+                    labelVariants(),
+                    isActive(pathname, navItem.href) ? activeClass : "",
+                  )}
+                >
                   <span>{navItem.label}</span>
                 </Link>
               </div>
@@ -54,7 +62,15 @@ export function ExtraNav({ items, isSticky }) {
           <HoverCard key={navItem.href}>
             <HoverCardTrigger asChild>
               <div className="group flex items-center h-full">
-                <Link href={navItem.href} target="_blank" className={cls("leading-[4rem]", labelVariants(), pathname === navItem.href ? "drop-shadow-[0_0_0.3rem_#ffffff70]" : "")}>
+                <Link
+                  href={navItem.href}
+                  target="_blank"
+                  className={cls(
+                    "leading-[4rem]",
+                    labelVariants(),
+                    pathname === navItem.href ? "drop-shadow-[0_0_0.3rem_#ffffff70]" : "",
+                  )}
+                >
                   <div className="flex flex-col items-center">
                     <span className="group-hover:animate-jump text-[0.9rem]">{navItem.icon}</span>
                     <span className={cls("text-xs", isSticky ? "sr-only" : "hidden lg:block")}>{navItem.label}</span>

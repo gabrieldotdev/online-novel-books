@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import CommandSearch from "@/islands/navigation/command-search";
 import { ExtraNav, MainNav } from "@/islands/navigation/main-nav";
+import UserMenu from "@/islands/navigation/user-menu";
 import { ThemesGeneralSwitcher } from "@/islands/switchers/themes-general-switcher";
 import { Banner } from "@/islands/visuals/banner";
 import { Boundary } from "@/islands/wrappers/boundary";
@@ -42,14 +43,23 @@ export function SiteHeader() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandSearch isSticky={isSticky} />
           </div>
+          <UserMenu isSticky={isSticky} />
           <ExtraNav items={siteConfig.extraNav} isSticky={isSticky} />
         </div>
       </Navbar>
-      <div className="relative z-0 h-40 max-h-40 w-full overflow-hidden">
+      <div className="relative z-0 h-36 max-h-36 w-full overflow-hidden">
         <Banner />
         <div className="absolute bottom-0 top-0 z-10 w-full">
           <div className="px-20 flex h-full items-end justify-between">
-            <Image className="relative mb-6 drop-shadow-[0_0_0.3rem_#ffffff70] invert" src="/logo.svg" alt="Next.js Logo" width={200} height={100} priority />
+            <Image
+              className="relative mb-6 drop-shadow-[0_0_0.3rem_#ffffff70] invert"
+              style={{ width: "180px", height: "auto" }}
+              src="/logo.svg"
+              alt="Next.js Logo"
+              width={180}
+              height={100}
+              priority
+            />
           </div>
         </div>
       </div>

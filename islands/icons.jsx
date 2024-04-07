@@ -1,4 +1,4 @@
-import { ArrowRight, LoaderCircleIcon, Moon, SearchIcon, Sun, X } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, LoaderCircleIcon, Moon, SearchIcon, Sun, X } from "lucide-react";
 
 export const Icons = {
   sun: (props) => <Sun {...props} />,
@@ -7,7 +7,10 @@ export const Icons = {
   arrowRight: (props) => <ArrowRight {...props} />,
   search: (props) => <SearchIcon {...props} />,
   close: (props) => <X {...props} />,
+  chevronDown: (props) => <ChevronDown {...props} />,
+  chevronUp: (props) => <ChevronUp {...props} />,
   nextjs: (props) => (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path
         fill="currentColor"
@@ -16,6 +19,7 @@ export const Icons = {
     </svg>
   ),
   gitHub: (props) => (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
         fill="currentColor"
@@ -24,7 +28,16 @@ export const Icons = {
     </svg>
   ),
   google: ({ ...props }) => (
-    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" {...props}>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      data-prefix="fab"
+      data-icon="discord"
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 488 512"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
@@ -32,6 +45,7 @@ export const Icons = {
     </svg>
   ),
   facebook: ({ ...props }) => (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" {...props}>
       <path
         fill="currentColor"
@@ -40,6 +54,7 @@ export const Icons = {
     </svg>
   ),
   discord: ({ ...props }) => (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" {...props}>
       <path
         fill="currentColor"
@@ -51,7 +66,14 @@ export const Icons = {
 
 export function XTwitterIcon({ className, height = "16" }) {
   return (
-    <svg aria-label="X (formerly known as Twitter)" fill="currentColor" height={height} viewBox="0 0 22 20" className={className}>
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+    <svg
+      aria-label="X (formerly known as Twitter)"
+      fill="currentColor"
+      height={height}
+      viewBox="0 0 22 20"
+      className={className}
+    >
       <path d="M16.99 0H20.298L13.071 8.26L21.573 19.5H14.916L9.702 12.683L3.736 19.5H0.426L8.156 10.665L0 0H6.826L11.539 6.231L16.99 0ZM15.829 17.52H17.662L5.83 1.876H3.863L15.829 17.52Z" />
     </svg>
   );
