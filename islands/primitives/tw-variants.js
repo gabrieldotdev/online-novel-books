@@ -14,6 +14,7 @@ export const labelVariants = tv({
   base: "leading-7 tracking-tight",
   variants: {
     size: {
+      xs: "text-xs",
       sm: "text-sm",
       md: "text-md",
       lg: "text-lg",

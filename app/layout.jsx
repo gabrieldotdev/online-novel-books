@@ -3,6 +3,7 @@ import "@/styles/globals.scss";
 import { DEFAULT_METADATA } from "@/data/meta";
 import { BasicAnnouncement } from "@/islands/basic-announcement";
 import { MultilayeredAnnouncement } from "@/islands/multilayered-announcement";
+import { TooltipProvider } from "@/islands/primitives/tooltip";
 import { NextThemesProvider } from "@/islands/providers/theme-provider";
 import { siteConfig } from "@/settings/app";
 import { fontJMono, geistSans } from "@/styles/fonts";
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
         )}
       >
         <NextThemesProvider attribute="class" defaultTheme="system" enableSystems disableTransitionOnChange>
-          {children}
+          <TooltipProvider>{children}</TooltipProvider>
           <BasicAnnouncement />
           <MultilayeredAnnouncement />
         </NextThemesProvider>

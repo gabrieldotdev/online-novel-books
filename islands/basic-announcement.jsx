@@ -1,6 +1,13 @@
 "use client";
 
-import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/islands/primitives/toast";
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/islands/primitives/toast";
 import { useToast } from "@/islands/primitives/use-toast";
 
 export function BasicAnnouncement() {
@@ -8,6 +15,7 @@ export function BasicAnnouncement() {
 
   return (
     <ToastProvider>
+      {/* biome-ignore lint/complexity/useArrowFunction: <explanation> */}
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
           <Toast key={id} {...props}>

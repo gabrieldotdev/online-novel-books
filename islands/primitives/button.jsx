@@ -10,12 +10,14 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
         none: "",
       },
       size: {
         default: "rounded-lg h-8 px-4",
         chip: "rounded-md h-7 px-3",
         "chip-icon": "rounded-md h-7 w-7",
+        none: "",
       },
     },
     defaultVariants: {

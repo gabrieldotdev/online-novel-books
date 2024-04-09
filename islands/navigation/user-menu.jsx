@@ -25,21 +25,10 @@ export default function UserMenu({ isSticky, signInNow = "Đăng nhập ngay", s
             </Link>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent className="w-auto inline-block px-2">
+        <HoverCardContent className="w-56 inline-block px-2">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">hoangthaininh</p>
-            <p className="text-xs leading-none text-muted-foreground">wxsdev@dev.com</p>
-          </div>
-          <div className="flex flex-col items-start space-y-1 mt-4">
-            <Button variant="none" size="sm" href="/account/profile">
-              Tài khoản
-            </Button>
-            <Button variant="none" size="sm" href="/account/profile">
-              Cài đặt
-            </Button>
-            <Button variant="none" size="sm" href="/account/profile">
-              Đăng xuất
-            </Button>
+            <p className="text-sm font-medium leading-none">shadcn</p>
+            <p className="text-xs leading-none text-muted-foreground">m@example.com</p>
           </div>
         </HoverCardContent>
       </HoverCard>

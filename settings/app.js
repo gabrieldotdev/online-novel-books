@@ -33,12 +33,12 @@ export const socialLinks = {
 
 export const popularCategories = [
   {
-    label: "Wxs is the best",
+    label: "Phổ biến",
     href: "wxs",
     icon: <Github size={16} />,
   },
   {
-    label: "Wxs is the best",
+    label: "Hot",
     href: "wxs",
     icon: <Coins size={16} />,
   },
@@ -46,112 +46,116 @@ export const popularCategories = [
 
 export const allCategories = [
   {
+    label: "Tất cả",
+    href: "/all",
+  },
+  {
     label: "Kịch",
-    href: "kich",
+    href: "/kich",
   },
   {
     label: "Truyện",
-    href: "truyen",
+    href: "/truyen",
   },
   {
     label: "Xuyên không",
-    href: "xuyen-khong",
+    href: "/xuyen-khong",
   },
   {
     label: "Ngôn tình",
-    href: "ngon-tinh",
+    href: "/ngon-tinh",
   },
   {
     label: "Tiên hiệp",
-    href: "tien-hiep",
+    href: "/tien-hiep",
   },
   {
     label: "Huyền huyễn",
-    href: "huyen-huyen",
+    href: "/huyen-huyen",
   },
   {
     label: "Đô thị",
-    href: "do-thi",
+    href: "/do-thi",
   },
   {
     label: "Hành động",
-    href: "hanh-dong",
+    href: "/hanh-dong",
   },
   {
     label: "Võng du",
-    href: "vong-du",
+    href: "/vong-du",
   },
   {
     label: "Dị năng",
-    href: "di-nang",
+    href: "/di-nang",
   },
   {
     label: "Đam mỹ",
-    href: "dam-my",
+    href: "/dam-my",
   },
   {
     label: "Trinh thám",
-    href: "trinh-tham",
+    href: "/trinh-tham",
   },
   {
     label: "Hài hước",
-    href: "hai-huoc",
+    href: "/hai-huoc",
   },
   {
     label: "Khoa học",
-    href: "khoa-hoc",
+    href: "/khoa-hoc",
   },
   {
     label: "Lịch sử",
-    href: "lich-su",
+    href: "/lich-su",
   },
   {
     label: "Quân sự",
-    href: "quan-su",
+    href: "/quan-su",
   },
   {
     label: "Thể thao",
-    href: "the-thao",
+    href: "/the-thao",
   },
   {
     label: "Truyện ma",
-    href: "truyen-ma",
+    href: "/truyen-ma",
   },
   {
     label: "Truyện cổ tích",
-    href: "truyen-co-tich",
+    href: "/truyen-co-tich",
   },
   {
     label: "Truyện ngắn",
-    href: "truyen-ngan",
+    href: "/truyen-ngan",
   },
   {
     label: "Truyện tranh",
-    href: "truyen-tranh",
+    href: "/truyen-tranh",
   },
   {
     label: "Truyện dài",
-    href: "truyen-dai",
+    href: "/truyen-dai",
   },
   {
     label: "Truyện cười",
-    href: "truyen-cuoi",
+    href: "/truyen-cuoi",
   },
   {
     label: "Truyện tình cảm",
-    href: "truyen-tinh-cam",
+    href: "/truyen-tinh-cam",
   },
   {
     label: "Truyện viễn tưởng",
-    href: "truyen-vien-tuong",
+    href: "/truyen-vien-tuong",
   },
   {
     label: "Truyện phiêu lưu",
-    href: "truyen-phieu-luu",
+    href: "/truyen-phieu-luu",
   },
   {
     label: "Truyện kinh dị",
-    href: "truyen-kinh-di",
+    href: "/truyen-kinh-di",
   },
 ];
 
@@ -168,7 +172,7 @@ export const siteConfig = {
   // ogImage: `${env.NEXT_PUBLIC_APP_URL}/og-image.png`,
   mainNav: [
     {
-      label: "Wxs is the best",
+      label: "Bảng xếp hạng",
       href: "about",
       items: [
         {
@@ -189,14 +193,15 @@ export const siteConfig = {
       ],
     },
     {
-      label: "Comic kids",
-      href: "comic-kids",
-      items: [],
-    },
-    {
-      label: "Ranking",
-      href: "ranking",
-      items: [],
+      label: "Tải ứng dụng",
+      href: "download",
+      items: [
+        {
+          label: "Coming soon",
+          href: "#",
+          description: "Coming soon",
+        },
+      ],
     },
     {
       label: "gì",
