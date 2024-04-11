@@ -7,10 +7,10 @@ import { ExtraNav, MainNav } from "@/islands/navigation/main-nav";
 import UserMenu from "@/islands/navigation/user-menu";
 import { ThemesGeneralSwitcher } from "@/islands/switchers/themes-general-switcher";
 import { Banner } from "@/islands/visuals/banner";
-import { Boundary } from "@/islands/wrappers/boundary";
-import { Header, Navbar } from "@/islands/wrappers/navbar-shell";
+import { ShellAs } from "@/islands/wrappers/shell-as";
 import { settings, siteConfig } from "@/settings/app";
 
+import { Shell } from "../wrappers/shell-variants";
 import { Categories } from "./categories";
 
 export function SiteHeader() {
@@ -34,19 +34,19 @@ export function SiteHeader() {
   }, [lastScrollTop]);
 
   return (
-    <Header>
-      <Navbar isSticky={isSticky}>
+    <ShellAs>
+      <ShellAs as="navbar" isSticky={isSticky}>
         <MainNav items={siteConfig.mainNav} isSticky={isSticky} />
         {/* <MobileNav mainNavItems={siteConfig.mainNav} isSticky={isSticky} /> */}
-        <div className="flex flex-1 items-center justify-between h-full space-x-2 md:justify-end">
+        <div className="flex flex-1 items-center justify-between h-full space-x-4 md:justify-end">
           {settings.themeToggleEnabled && <ThemesGeneralSwitcher />}
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandSearch isSticky={isSticky} />
           </div>
-          <UserMenu isSticky={isSticky} />
           <ExtraNav items={siteConfig.extraNav} isSticky={isSticky} />
+          <UserMenu isSticky={isSticky} />
         </div>
-      </Navbar>
+      </ShellAs>
       <div className="relative z-0 h-36 max-h-36 w-full overflow-hidden">
         <Banner />
         <div className="absolute bottom-0 top-0 z-10 w-full">
@@ -63,9 +63,9 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-      <Boundary>
+      <Shell variant="compact" className="py-3 border-b ring-foreground/20">
         <Categories />
-      </Boundary>
-    </Header>
+      </Shell>
+    </ShellAs>
   );
 }

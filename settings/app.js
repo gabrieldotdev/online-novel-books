@@ -159,6 +159,28 @@ export const allCategories = [
   },
 ];
 
+export const bookDetails = {
+  allTags: [
+    { name: "Tưởng tượng" },
+    { name: "Đang ra" },
+    { name: "Phép thuật" },
+    { name: "Huyền huyễn" },
+    { name: "Hài hước" },
+    { name: "Hành động" },
+  ],
+  allNums: [
+    { name: "Lượt truy cập", value: 624 },
+    { name: "Tổng khuyến nghị", value: 4544 },
+    { name: "Đề xuất theo tuần", value: 34 },
+    { name: "Bộ sưu tập", value: 20 },
+  ],
+  allButton: [
+    { name: "Đọc ngay", href: "/read" },
+    { name: "Thăm vào giá sách", href: "/download" },
+    { name: "Đánh giá ý kiến", href: "/rate" },
+  ],
+};
+
 export const siteConfig = {
   name: "Novels",
   shortName: "Novels",

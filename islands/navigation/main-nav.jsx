@@ -1,35 +1,26 @@
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/islands/primitives/hover-card";
-import { labelVariants } from "@/islands/primitives/tw-variants";
-import { NavbarContent } from "@/islands/wrappers/navbar-shell";
+import { labelVariants } from "@/islands/primitives/tw-variants/tv";
+import { ShellAs } from "@/islands/wrappers/shell-as";
 import { cls } from "@/utils";
 
 import { ListItem } from "./_components/list-item";
 import { LogoBrand } from "./_components/logo-brand";
 
-const isActive = (pathname, href) => pathname === href;
-const activeClass = "drop-shadow-[0_0_0.3rem_#ffffff70]";
-
 export function MainNav({ items, isSticky }) {
-  const pathname = usePathname();
   return (
-    <NavbarContent>
+    <ShellAs as="navbarContent">
       <LogoBrand isSticky={isSticky} />
       {items
         ?.filter((navitem) => !navitem.external)
         .map((navItem) => (
           <HoverCard key={navItem.href}>
             <HoverCardTrigger asChild>
-              <div className="group flex items-center h-full">
+              <div className="group hidden md:flex flex-shrink-0 items-center h-full">
                 <Link
                   href={navItem.href}
                   target="_blank"
-                  className={cls(
-                    "leading-[4rem] group-hover:animate-jump",
-                    labelVariants(),
-                    isActive(pathname, navItem.href) ? activeClass : "",
-                  )}
+                  className={cls("leading-[4rem] group-hover:animate-jump", isSticky || "text-white", labelVariants())}
                 >
                   <span>{navItem.label}</span>
                 </Link>
@@ -48,30 +39,21 @@ export function MainNav({ items, isSticky }) {
             )}
           </HoverCard>
         ))}
-    </NavbarContent>
+    </ShellAs>
   );
 }
 
 export function ExtraNav({ items, isSticky }) {
-  const pathname = usePathname();
   return (
-    <NavbarContent className="space-x-2">
+    <ShellAs as="navbarContent" className="space-x-3">
       {items
         ?.filter((navitem) => !navitem.external)
         .map((navItem) => (
           <HoverCard key={navItem.href}>
             <HoverCardTrigger asChild>
               <div className="group flex items-center h-full">
-                <Link
-                  href={navItem.href}
-                  target="_blank"
-                  className={cls(
-                    "leading-[4rem]",
-                    labelVariants(),
-                    pathname === navItem.href ? "drop-shadow-[0_0_0.3rem_#ffffff70]" : "",
-                  )}
-                >
-                  <div className="flex flex-col items-center">
+                <Link href={navItem.href} target="_blank" className={cls("leading-[4rem]", labelVariants())}>
+                  <div className={cls("flex flex-col items-center", isSticky || "text-white")}>
                     <span className="group-hover:animate-jump text-[0.9rem]">{navItem.icon}</span>
                     <span className={cls("text-xs", isSticky ? "sr-only" : "hidden lg:block")}>{navItem.label}</span>
                   </div>
@@ -91,6 +73,6 @@ export function ExtraNav({ items, isSticky }) {
             )}
           </HoverCard>
         ))}
-    </NavbarContent>
+    </ShellAs>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { labelVariants } from "@/islands/primitives/tw-variants";
+import { labelVariants } from "@/islands/primitives/tw-variants/tv";
 import { siteConfig } from "@/settings/app";
 import { cls } from "@/utils";
 
@@ -15,7 +15,16 @@ export function LogoBrand({ isSticky }) {
         style={{ width: "30px", height: "30px" }}
         className={cls("relative drop-shadow-[0_0_0.3rem_#ffffff70]", isSticky ? "dark:invert" : "invert")}
       />
-      <span className={cls("hidden font-medium sm:inline-block", "group-hover:animate-jump", labelVariants())}>{siteConfig.name}</span>
+      <span
+        className={cls(
+          "hidden font-medium sm:inline-block",
+          "group-hover:animate-jump",
+          isSticky || "text-white",
+          labelVariants(),
+        )}
+      >
+        {siteConfig.name}
+      </span>
     </Link>
   );
 }

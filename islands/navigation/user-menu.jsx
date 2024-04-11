@@ -1,13 +1,13 @@
 // import Link from "next/link";
 import { Link } from "@/core/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/islands/account/avatar";
-import { Button } from "@/islands/primitives/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/islands/primitives/hover-card";
-import { labelVariants } from "@/islands/primitives/tw-variants";
 import { cls } from "@/utils";
 
+import { labelVariants } from "../primitives/tw-variants/tv";
+
 export default function UserMenu({ isSticky, signInNow = "Đăng nhập ngay", signIn = "Đăng nhập" }) {
-  const session = true;
+  const session = false;
 
   if (session) {
     return (

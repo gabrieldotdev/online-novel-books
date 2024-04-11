@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge } from "@/islands/primitives/badge";
 import { Button } from "@/islands/primitives/button";
 import {
@@ -12,7 +11,6 @@ import {
 } from "@/islands/primitives/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/islands/primitives/popover";
 import { Separator } from "@/islands/primitives/separator";
-import { cls } from "@/utils";
 import { ArrowDown10 } from "lucide-react";
 
 export function FacetedFilter({ title, options }) {

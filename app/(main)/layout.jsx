@@ -4,9 +4,9 @@ import { GeneralShell } from "@/islands/wrappers/general-shell";
 
 export default function MainLayout({ children }) {
   return (
-    <GeneralShell>
+    <>
       <SiteHeader />
-      <main className="lg:px-20 px-10">{children}</main>
-    </GeneralShell>
+      <GeneralShell>{children}</GeneralShell>
+    </>
   );
 }

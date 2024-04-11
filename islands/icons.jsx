@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, ChevronUp, LoaderCircleIcon, Moon, SearchIcon, Sun, X } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, LoaderCircleIcon, Moon, SearchIcon, Star, Sun, X } from "lucide-react";
 
 export const Icons = {
   sun: (props) => <Sun {...props} />,
@@ -9,6 +9,7 @@ export const Icons = {
   close: (props) => <X {...props} />,
   chevronDown: (props) => <ChevronDown {...props} />,
   chevronUp: (props) => <ChevronUp {...props} />,
+  star: (props) => <Star {...props} />,
   nextjs: (props) => (
     // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>

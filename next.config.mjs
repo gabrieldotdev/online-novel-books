@@ -3,7 +3,7 @@
  * that are allowed to show media.
  */
 
-const hostnames = ["plus.unsplash.com", "images.unsplash.com"];
+const hostnames = ["plus.unsplash.com", "images.unsplash.com", "loremflickr.com"];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

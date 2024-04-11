@@ -1,7 +1,7 @@
 import React from "react";
 import { Separator } from "@/islands/primitives/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/islands/primitives/tooltip";
-import { labelVariants } from "@/islands/primitives/tw-variants";
+import { labelVariants } from "@/islands/primitives/tw-variants/tv";
 import { cls } from "@/utils";
 import { BadgeHelp, Github } from "lucide-react";
 

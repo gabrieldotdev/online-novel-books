@@ -5,8 +5,7 @@ import TableDirectory from "@/app/_islands/main/categories/view-mode/table-direc
 import { Link } from "@/core/link";
 import { Separator } from "@/islands/primitives/separator";
 import { TabsContent, TabsList, TabsTrigger } from "@/islands/primitives/tabs";
-import { Boundary, boundaryVariants } from "@/islands/wrappers/boundary";
-import { SegmentBoundary } from "@/islands/wrappers/segment-boundary";
+import { CompressionShell } from "@/islands/wrappers/compression-shell";
 import { Shell } from "@/islands/wrappers/shell-variants";
 import { cls } from "@/utils";
 import { ListMinus, TableCellsMerge } from "lucide-react";
@@ -30,7 +29,7 @@ const allComics = [
     novelGenre: "Các lục địa ở thế giới khác",
     imageUrl: "/assets/images/600.webp",
     novelTitle: "Vòng tròn định mệnh",
-    description: "Thế giới bí ẩn phần hai. Năm 1368, vào cuối tháng bảy, màu đỏ sẽ rơi từ trời xuống.",
+    description: "Thế giới bí ẩn phần hai. N8, vào cuối tháng bảy, màu đỏ sẽ rơi từ trời xuống.",
     latestChapter: "Chapter 323: Sinh mệnh và cái chết",
     wordCount: "123,456",
     author: "Hoàng Thái Ninh",
@@ -50,19 +49,30 @@ const allComics = [
   },
 ];
 
-export default function All() {
+async function getData() {
+  const res = await fetch("https://661662d5b8b8e32ffc7d5027.mockapi.io/novels", { method: "GET" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function All() {
+  const data = await getData();
   const valTable = "table";
   const valCard = "card";
 
   return (
-    <Shell as="div">
-      <Boundary className="flex">
-        <SegmentBoundary border="solid" className={cls("hidden lg:block flex-none w-36 min-w-52")}>
+    <Shell as="div" className="mt-4">
+      <Shell variant="compact" className="flex">
+        <CompressionShell className={cls("hidden lg:block flex-none min-w-60 w-60")}>
           <Link href="/about">
             <h3>山海提灯</h3>
           </Link>
-        </SegmentBoundary>
-        <SegmentBoundary border="none" className="w-full">
+        </CompressionShell>
+        <CompressionShell>
           <TabWrapper defaultValue={valTable}>
             <Toolbar>
               <TabsList className="bg-transparent">
@@ -76,14 +86,14 @@ export default function All() {
               </TabsList>
             </Toolbar>
             <TabsContent value={valTable}>
-              <TableDirectory data={allComics} />
+              <TableDirectory data={data} />
             </TabsContent>
             <TabsContent value={valCard}>
-              <CardDirectory data={allComics} />
+              <CardDirectory data={data} />
             </TabsContent>
           </TabWrapper>
-        </SegmentBoundary>
-      </Boundary>
+        </CompressionShell>
+      </Shell>
     </Shell>
   );
 }

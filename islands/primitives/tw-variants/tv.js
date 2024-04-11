@@ -32,19 +32,23 @@ export const buttonVariants = tv({
   base: "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
-      default: "bg-primary text-primary-foreground hover:bg-primary/90",
-      none: "",
+      flat: "bg-primary text-primary-foreground hover:bg-primary/90",
+      outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+      link: "text-primary",
     },
     size: {
-      default: "text-xs h-6 px-4",
-      sm: "",
-      lg: "",
-      icon: "",
-      none: "",
+      small: "rounded-sm h-6 px-2",
+      medium: "rounded-md h-8 px-4",
+      large: "rounded-lg h-10 px-6",
+      icon: "rounded-full h-10 w-10",
+      chip: "rounded-md h-7 px-3",
+      chipIcon: "rounded-md h-7 w-7",
+      link: "",
     },
+    color: {},
   },
   defaultVariants: {
-    variant: "default",
-    size: "default",
+    variant: "link",
+    size: "link",
   },
 });

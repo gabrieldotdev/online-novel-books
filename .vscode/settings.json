@@ -39,7 +39,8 @@
     "shadcn",
     "sonner",
     "Truyen",
-    "uploadthing"
+    "uploadthing",
+    "webp"
   ],
   "editor.unicodeHighlight.allowedCharacters": {
     "a": true,
