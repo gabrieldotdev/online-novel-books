@@ -1,12 +1,11 @@
-import { Toolbar } from "@/app/_islands/main/categories/menu-bar/toolbar";
-import { TabWrapper } from "@/app/_islands/main/categories/tab-wrapper";
-import CardDirectory from "@/app/_islands/main/categories/view-mode/card-directory";
-import TableDirectory from "@/app/_islands/main/categories/view-mode/table-directory";
+import { Toolbar } from "@/app/_islands/categories/menu-bar/toolbar";
+import { TabWrapper } from "@/app/_islands/categories/tab-wrapper";
+import CardDirectory from "@/app/_islands/categories/view-mode/card-directory";
+import TableDirectory from "@/app/_islands/categories/view-mode/table-directory";
 import { Link } from "@/core/link";
 import { Separator } from "@/islands/primitives/separator";
 import { TabsContent, TabsList, TabsTrigger } from "@/islands/primitives/tabs";
-import { CompressionShell } from "@/islands/wrappers/compression-shell";
-import { Shell } from "@/islands/wrappers/shell-variants";
+import { BaseShell, Shell } from "@/islands/wrappers/shell-variants";
 import { cls } from "@/utils";
 import { ListMinus, TableCellsMerge } from "lucide-react";
 
@@ -49,51 +48,47 @@ const allComics = [
   },
 ];
 
-async function getData() {
-  const res = await fetch("https://661662d5b8b8e32ffc7d5027.mockapi.io/novels", { method: "GET" });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+// async function getData() {
+//   const res = await fetch(`${env.DATABASE_URL}/novels`);
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+//   return res.json();
+// }
 
 export default async function All() {
-  const data = await getData();
+  // const data = await getData();
   const valTable = "table";
   const valCard = "card";
 
   return (
-    <Shell as="div" className="mt-4">
-      <Shell variant="compact" className="flex">
-        <CompressionShell className={cls("hidden lg:block flex-none min-w-60 w-60")}>
-          <Link href="/about">
-            <h3>山海提灯</h3>
-          </Link>
-        </CompressionShell>
-        <CompressionShell>
-          <TabWrapper defaultValue={valTable}>
-            <Toolbar>
-              <TabsList className="bg-transparent">
-                <TabsTrigger value={valTable}>
-                  <ListMinus size={16} />
-                </TabsTrigger>
-                <Separator orientation="vertical" className="h-3" />
-                <TabsTrigger value={valCard}>
-                  <TableCellsMerge size={15} />
-                </TabsTrigger>
-              </TabsList>
-            </Toolbar>
-            <TabsContent value={valTable}>
-              <TableDirectory data={data} />
-            </TabsContent>
-            <TabsContent value={valCard}>
-              <CardDirectory data={data} />
-            </TabsContent>
-          </TabWrapper>
-        </CompressionShell>
+    <BaseShell as="div" className="flex py-0 lg:py-0">
+      <Shell variant="compact" className={cls("hidden lg:block flex-none min-w-60 w-60")}>
+        <Link href="/about">
+          <h3>山海提灯</h3>
+        </Link>
       </Shell>
-    </Shell>
+      <Shell variant="compact">
+        <TabWrapper defaultValue={valTable}>
+          <Toolbar>
+            <TabsList className="bg-transparent">
+              <TabsTrigger value={valTable}>
+                <ListMinus size={16} />
+              </TabsTrigger>
+              <Separator orientation="vertical" className="h-3" />
+              <TabsTrigger value={valCard}>
+                <TableCellsMerge size={15} />
+              </TabsTrigger>
+            </TabsList>
+          </Toolbar>
+          <TabsContent value={valTable}>
+            <TableDirectory data={allComics} />
+          </TabsContent>
+          <TabsContent value={valCard}>
+            <CardDirectory data={allComics} />
+          </TabsContent>
+        </TabWrapper>
+      </Shell>
+    </BaseShell>
   );
 }

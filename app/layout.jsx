@@ -1,12 +1,12 @@
 import "@/styles/globals.scss";
 
 import { DEFAULT_METADATA } from "@/data/meta";
-import { BasicAnnouncement } from "@/islands/basic-announcement";
+import { BasicNotice } from "@/islands/basic-notice";
 import { MultilayeredAnnouncement } from "@/islands/multilayered-announcement";
 import { TooltipProvider } from "@/islands/primitives/tooltip";
 import { NextThemesProvider } from "@/islands/providers/theme-provider";
 import { siteConfig } from "@/settings/app";
-import { fontJMono, geistSans } from "@/styles/fonts";
+import { fontMono } from "@/styles/fonts";
 import { cls } from "@/utils";
 
 export const metadata = {
@@ -28,13 +28,13 @@ export default function RootLayout({ children }) {
       <body
         className={cls(
           "min-h-screen bg-background font-sans antialiased mx-auto w-full max-w-[2560px]",
-          fontJMono.variable,
+          fontMono.className,
         )}
       >
         <NextThemesProvider attribute="class" defaultTheme="system" enableSystems disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>
-          <BasicAnnouncement />
           <MultilayeredAnnouncement />
+          <BasicNotice />
         </NextThemesProvider>
       </body>
     </html>

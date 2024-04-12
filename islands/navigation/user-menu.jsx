@@ -1,10 +1,9 @@
-// import Link from "next/link";
 import { Link } from "@/core/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/islands/account/avatar";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/islands/primitives/hover-card";
 import { cls } from "@/utils";
 
-import { labelVariants } from "../primitives/tw-variants/tv";
+import { labelVariants } from "../primitives/tw/twv";
 
 export default function UserMenu({ isSticky, signInNow = "Đăng nhập ngay", signIn = "Đăng nhập" }) {
   const session = false;
@@ -37,9 +36,10 @@ export default function UserMenu({ isSticky, signInNow = "Đăng nhập ngay", s
   return (
     <Link
       href="/sign-in"
+      size="default"
       variant="none"
       className={cls(
-        "flex items-center rounded-lg shadow-none ring-1",
+        "flex items-center rounded-xl shadow-none ring-1",
         isSticky
           ? "bg-background/5 hover:bg-foreground/10 text-foreground/60 ring-foreground/20"
           : "bg-white/5 hover:bg-white/10 text-white/60 ring-white/20",

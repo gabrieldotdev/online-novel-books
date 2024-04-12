@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import * as React from "react";
 
-import bannersData from "./config";
+// import bannersData from "./config";
 
 export function Banner() {
   return (

@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { buttonVariants } from "@/islands/primitives/tw-variants/tv";
-import { cls } from "@/utils";
+import { buttonVariants } from "@/islands/primitives/tw/twv";
+import { cn } from "@/utils";
 
-const ExtendedLink = React.forwardRef(({ className, variant, size, color, href, ...props }, ref) => {
-  const variantClasses = buttonVariants({ variant, size, color });
+const ExtendedLink = React.forwardRef(({ className, variant, size, href, ...props }, ref) => {
+  const variantClasses = buttonVariants({ variant, size });
   const linkHref = href ?? "/";
 
-  return <Link {...props} href={linkHref} className={cls(variantClasses, className)} ref={ref} />;
+  return <Link href={linkHref} className={cn("no-underline", variantClasses, className)} ref={ref} {...props} />;
 });
 
 export { ExtendedLink as Link };

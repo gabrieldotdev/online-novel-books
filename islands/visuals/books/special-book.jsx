@@ -1,9 +1,8 @@
 import Image from "next/image";
+import { bookVariants, speedVariants } from "@/islands/primitives/tw/twv";
 import { cls } from "@/utils";
 
-import { bookVariants, speedVariants } from "./regular-book";
-
-function SpecialBook({ type = "special", size, speed, hover, alt, imageUrl, className, ...props }) {
+export function SpecialBook({ type = "special", size, speed, hover, alt, imageUrl, className, ...props }) {
   return (
     <figure className={cls(bookVariants({ type, size }), className)} {...props}>
       <Image
@@ -17,5 +16,3 @@ function SpecialBook({ type = "special", size, speed, hover, alt, imageUrl, clas
     </figure>
   );
 }
-
-export { SpecialBook };

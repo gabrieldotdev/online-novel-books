@@ -2,7 +2,7 @@
 import { withUt } from "uploadthing/tw";
 
 /** @type {import('tailwindcss').Config} */
-export default withUt({
+module.exports = withUt({
   darkMode: ["class"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -75,16 +75,16 @@ export default withUt({
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "jump": {
+        jump: {
           "0%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-3px)" },
-          "to": { transform: "translateY(0)" },
+          to: { transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "jump": "jump 0.3s",
+        jump: "jump 0.3s",
       },
     },
   },

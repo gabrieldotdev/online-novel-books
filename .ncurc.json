@@ -1,4 +1,4 @@
 {
-  "upgrade": true,
-  "reject": ["next", "react"]
+	"upgrade": true,
+	"reject": ["next", "react"]
 }
