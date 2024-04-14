@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const typographyVariants = tv(
   {
-    base: "prose",
+    base: "prose text-foreground",
     variants: {
       size: {
         small: "prose-sm",

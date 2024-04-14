@@ -12,7 +12,7 @@ import { ListItem } from "./_islands/list-item";
 export function MainNav({ items, isSticky }) {
   return (
     <NavbarContent>
-      <NavbarBrand src="/icon.svg" alt="Logo" className={isSticky ? "" : "invert"}>
+      <NavbarBrand src="/icon.svg" alt="Logo" className={isSticky ? "dark:invert" : "invert"}>
         <span
           className={cls(
             "hidden font-medium sm:inline-block",

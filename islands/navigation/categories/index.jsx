@@ -40,7 +40,7 @@ export function Categories() {
   const isActive = (href) => pathname === href;
 
   return (
-    <BaseShell className="flex items-start gap-0 lg:py-4">
+    <BaseShell className="flex items-start">
       <div
         className={cls("flex space-x-2 flex-shrink-0", buttonVariants({ variant: "none", size: "sm" }))}
         style={{ padding: "0" }}

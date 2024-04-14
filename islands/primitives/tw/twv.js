@@ -54,7 +54,7 @@ export const buttonVariants = tv({
 });
 
 export const shellVariants = tv({
-  base: "grid items-center gap-8 py-4 md:py-8",
+  base: "grid items-center py-2 md:py-4",
   variants: {
     variant: {
       default: "container mx-auto",
@@ -90,7 +90,8 @@ export const bookVariants = tv({
     size: {
       small: "w-14",
       medium: "w-24",
-      large: "w-52",
+      large: "w-48",
+      larger: "w-52",
     },
   },
   defaultVariants: {

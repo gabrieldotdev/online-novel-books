@@ -2,7 +2,7 @@ import Image from "next/image";
 import { bookVariants, speedVariants } from "@/islands/primitives/tw/twv";
 import { cls } from "@/utils";
 
-export function RegularBook({ size, speed, hover, alt, imageUrl, className, ...props }) {
+export function RegularBook({ size, speed, hover, alt = "", imageUrl, className, ...props }) {
   return (
     <figure className={cls(bookVariants({ size }), className)} {...props}>
       <Image
