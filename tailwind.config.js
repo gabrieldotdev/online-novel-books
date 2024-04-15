@@ -6,10 +6,11 @@ module.exports = withUt({
   darkMode: ["class"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./core/**/*.{js,ts,jsx,tsx,mdx}",
-    "./forms/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./islands/**/*.{js,ts,jsx,tsx,mdx}",
+    "./forms/**/*.{js,ts,jsx,tsx,mdx}",
+    "./themes/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
@@ -58,8 +59,8 @@ module.exports = withUt({
         },
       },
       // fontFamily: {
-      //   sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-      //   mono: ["var(--font-mono)", ...fontFamily.mono],
+      //   // sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+      //   // mono: ["var(--font-mono)", ...fontFamily.mono],
       // },
       borderRadius: {
         lg: "var(--radius)",

@@ -12,14 +12,17 @@ import { bookDetails } from "@/settings/other";
 import { cls } from "@/utils";
 
 export default function BookDetail({ params }) {
+  console.log(params);
   return (
     <BaseShell as="div">
-      <Shell className="flex">
-        <Card className="flex items-center border-none">
-          <SpecialBook imageUrl={"/assets/images/600.webp"} alt="" size="large" />
-          <div className="flex flex-col space-y-4 h-full p-4">
+      <Shell variant="compact" className="flex">
+        <Card className="flex flex-grow items-center border-none">
+          <CardHeader className="flex-shrink-0">
+            <SpecialBook imageUrl={"/assets/images/600.webp"} alt="" size="large" />
+          </CardHeader>
+          <div className="space-y-4 h-full">
             {/* title */}
-            <CardHeader className="p-0">
+            <CardContent className="p-0">
               <CardTitle className={cls("truncate", labelVariants({ size: "xl" }))}>
                 Từ lúc bắt đầu, ta vô địch lĩnh vực
               </CardTitle>
@@ -32,10 +35,10 @@ export default function BookDetail({ params }) {
                 </CardDescription>
                 <CardDescription className="text-foreground/60">Được chỉnh sửa: 2024-04-11 09:35:45</CardDescription>
               </div>
-            </CardHeader>
+            </CardContent>
             {/* Tags */}
             <CardContent className="p-0 flex-grow">
-              <CardDescription className="space-x-2">
+              <CardDescription className="flex flex-wrap gap-2">
                 {bookDetails.allTags.map((tag, index) => (
                   <Link key={index} href={tag.href} size="sm" variant="outline">
                     {tag.name}
@@ -70,7 +73,7 @@ export default function BookDetail({ params }) {
             </CardFooter>
           </div>
         </Card>
-        <Card className="flex flex-col items-center space-y-4 w-72 px-4 py-6">
+        <Card className="hidden lg:flex flex-col items-center space-y-4 w-72 px-4 py-6">
           <CardHeader className="p-0 space-y-4">
             <figure className="relative">
               <Avatar className="h-24 w-24 hover:rounded-lg">
