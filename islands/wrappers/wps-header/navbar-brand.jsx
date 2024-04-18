@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Link } from "@/core/link";
 import { cls } from "@/utils";
 
-export function NavbarBrand({ alt = "", src, children, className }) {
+export function NavbarBrand({ href = "/", alt = "", src, children, className }) {
   return (
-    <Link className="group mr-4 flex items-center justify-center space-x-1">
+    <Link href={href} className="group mr-4 flex items-center justify-center space-x-1">
       <Image
         src={src}
         alt={alt}

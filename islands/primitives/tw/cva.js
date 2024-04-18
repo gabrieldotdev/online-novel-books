@@ -28,6 +28,7 @@ export const buttonVariants = cva(
         lg: "h-11 rounded-lg px-8",
         icon: "h-10 w-10 rounded-md",
         chip: "h-7 w-7 rounded-md",
+        none: "",
       },
     },
     defaultVariants: {
