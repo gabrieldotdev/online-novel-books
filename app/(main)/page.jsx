@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { Link } from "@/core/link";
+import { ChiefCarousel } from "@/islands/navigation/carousels/chief-carousel";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/islands/primitives/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/islands/primitives/carousel";
 import { typographyVariants } from "@/islands/primitives/tw/typography";
@@ -210,26 +211,7 @@ export default function Home() {
       </Shell>
       {/* chief editor recommendations */}
       <Shell variant="compact">
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-            containScroll: "keepSnaps",
-            dragFree: true,
-          }}
-          plugins={[Autoplay({ playOnInit: true, delay: 3000 })]}
-          className="w-full max-w-full h-96 content-center rounded-xl bg-gradient-to-b from-destructive/30 to-transparent"
-        >
-          <CarouselContent>
-            {Array.from({ length: 20 }).map((_, index) => (
-              <CarouselItem key={index} className="basis-1/6">
-                {index + 1}
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <ChiefCarousel />
       </Shell>
       <Ads
         imageUrl="https://images.unsplash.com/photo-1712675009273-5a6c46663fbb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

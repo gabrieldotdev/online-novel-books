@@ -113,7 +113,7 @@ export const speedVariants = tv({
     },
   },
   defaultVariants: {
-    hover: "scale105",
+    hover: "scale110",
     speed: "300",
   },
 });
