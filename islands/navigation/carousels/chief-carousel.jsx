@@ -1,16 +1,13 @@
 import * as React from "react";
-import { Link } from "@/core/link";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/islands/primitives/carousel";
-import { SpecialBook } from "@/islands/visuals/books/special-book";
-import { cls } from "@/utils";
 import Autoplay from "embla-carousel-autoplay";
 
-import { CardCarousel as Card } from "./islands/card";
+import { ChiefCard } from "./islands/chief-card";
 
 const data = [
   {
     id: 1,
-    name: "Chief 1",
+    name: "Vô địch lĩnh vực, vô địch cuộc sống",
     href: "/chief-1",
     description: "Chief 1 description hello hehehe hahha sdfdgdsg",
     image: "/assets/images/600.webp",
@@ -18,7 +15,7 @@ const data = [
   },
   {
     id: 2,
-    name: "Chief 2",
+    name: "Đạt cấp bậc cao nhất trong công ty",
     href: "/chief-2",
     description: "Chief 2 description",
     image: "/assets/images/600.webp",
@@ -91,34 +88,53 @@ const data = [
 ];
 
 export function ChiefCarousel() {
-  // const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [api, setApi] = React.useState();
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const onSelect = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    return () => api.off("select", onSelect);
+  }, [api]);
 
   return (
-    <Carousel
-      opts={{
-        align: "center",
-        loop: true,
-        containScroll: "keepSnaps",
-        dragFree: true,
-      }}
-      plugins={[Autoplay({ playOnInit: true, delay: 5000 })]}
-      className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-b from-destructive/30 to-transparent"
-    >
-      <CarouselContent>
-        {data.map((item) => (
-          <CarouselItem key={item.id} className="basis-1/3 md:basis-1/4 lg:basis-1/6">
-            <Card
-              image={item.image}
-              name={item.name}
-              description={item.description}
-              author={item.author}
-              href={item.href}
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <>
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "center",
+          loop: true,
+          containScroll: "keepSnaps",
+          dragFree: true,
+        }}
+        plugins={[Autoplay({ playOnInit: true, delay: 5000 })]}
+        className="flex h-96 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-b from-destructive/30 to-transparent"
+      >
+        <CarouselContent>
+          {data.map((item) => (
+            <CarouselItem key={item.id} className="basis-1/3 md:basis-1/4 lg:basis-1/6">
+              <ChiefCard
+                id={item.id}
+                image={item.image}
+                name={item.name}
+                description={item.description}
+                author={item.author}
+                href={item.href}
+                selectedIndex={selectedIndex}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </>
   );
 }
