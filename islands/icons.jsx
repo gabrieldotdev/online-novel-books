@@ -3,8 +3,11 @@ import {
   ArrowRight,
   ChevronDown,
   ChevronUp,
+  Clock,
   LoaderCircleIcon,
   Moon,
+  Notebook,
+  PenTool,
   SearchIcon,
   Star,
   Sun,
@@ -22,6 +25,9 @@ export const Icons = {
   chevronUp: (props) => <ChevronUp {...props} />,
   star: (props) => <Star {...props} />,
   arrowBigLeftDash: (props) => <ArrowBigLeftDash {...props} />,
+  notebook: (props) => <Notebook {...props} />,
+  penTool: (props) => <PenTool {...props} />,
+  clock: (props) => <Clock {...props} />,
   nextjs: (props) => (
     // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>

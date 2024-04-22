@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import * as React from "react";
 
-export function useSticky() {
-  const [isSticky, setIsSticky] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+export const useSticky = () => {
+  const [isSticky, setIsSticky] = React.useState(false);
+  const [lastScrollTop, setLastScrollTop] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -19,6 +19,5 @@ export function useSticky() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollTop]);
-
-  return isSticky;
-}
+  return { isSticky };
+};

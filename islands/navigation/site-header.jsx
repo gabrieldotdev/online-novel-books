@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { useSticky } from "@/hooks/useSticky";
 import { Header, Navbar, NavbarContent } from "@/islands/wrappers/wps-header";
 import { settings, siteConfig } from "@/settings/app";
 
@@ -13,24 +14,7 @@ import { MainNav } from "./main-nav";
 import UserMenu from "./user-menu";
 
 export function SiteHeader() {
-  const [isSticky, setIsSticky] = React.useState(false);
-  const [lastScrollTop, setLastScrollTop] = React.useState(0);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY < lastScrollTop && currentScrollY > 0) {
-        setIsSticky(true);
-      } else if (currentScrollY > lastScrollTop || currentScrollY === 0) {
-        setIsSticky(false);
-      }
-      setLastScrollTop(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollTop]);
+  const { isSticky } = useSticky();
 
   return (
     <Header>

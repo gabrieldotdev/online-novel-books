@@ -149,3 +149,66 @@ export const bookDetails = {
     { name: "Đánh giá ý kiến", href: "/rate" },
   ],
 };
+
+export const festivals = [
+  {
+    id: 1,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/1",
+  },
+  {
+    id: 2,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/23456345",
+  },
+  {
+    id: 3,
+    name: "Huyền Huyễn",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/345747",
+  },
+  {
+    id: 4,
+    name: "Nhất Quỷ Nhì Ma",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/6358364834",
+  },
+  {
+    id: 5,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/543572537",
+  },
+  {
+    id: 6,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/6568548",
+  },
+  {
+    id: 7,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/73257457",
+  },
+  {
+    id: 8,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/2352358",
+  },
+  {
+    id: 9,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/9123521",
+  },
+  {
+    id: 10,
+    name: "Tonic",
+    image: "/assets/images/32a92ff7e101abb3260aa4941ece6ae55cbc8c26.jpg@976w_550h_1c_!web-home-carousel-cover.avif",
+    href: "/festival/0124124",
+  },
+];
