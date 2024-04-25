@@ -2,6 +2,7 @@
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cls\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["tw=\"([^\"]*)\""]
   ],
   "scss.validate": false,
@@ -37,13 +38,17 @@
     "hoangthaninh",
     "lerp",
     "navitem",
+    "navs",
     "pnpx",
+    "revo",
     "Roboto",
+    "scroller",
     "shadcn",
     "sonner",
     "Truyen",
     "uploadthing",
-    "webp"
+    "webp",
+    "zongheng"
   ],
   "editor.unicodeHighlight.allowedCharacters": {
     "a": true,

@@ -30,54 +30,48 @@ import tailwindcssPlugin from "eslint-plugin-tailwindcss";
 const compat = new FlatCompat();
 
 const importedRules = {
-	...eslintJsPlugin.rules,
-	...stylisticPlugin.rules,
-	...jsxA11yPlugin.rules,
-	...reactPlugin.rules,
-	...reactHooksPlugin.rules,
-	...tailwindcssPlugin.rules,
-	...reactPluginConfigsRecommended.rules,
+  ...eslintJsPlugin.rules,
+  ...stylisticPlugin.rules,
+  ...jsxA11yPlugin.rules,
+  ...reactPlugin.rules,
+  ...reactHooksPlugin.rules,
+  ...tailwindcssPlugin.rules,
+  ...reactPluginConfigsRecommended.rules,
 };
 
 /** @type {import("eslint").Linter.Config} */
 const config = antfu(
-	{
-		ignores: [".next", "build"],
-		stylistic: { quotes: "double", semi: true },
-		settings: { react: { version: "detect" } },
-		formatters: { css: true },
-		react: true,
-		vue: false,
-		plugins: {
-			"@next/next": nextPlugin,
-			"@stylistic": stylisticPlugin,
-			react: reactPlugin,
-			"jsx-a11y": jsxA11yPlugin,
-			"react-hooks": reactHooksPlugin,
-			tailwindcss: tailwindcssPlugin,
-		},
-		rules: {
-			...importedRules,
-			/**
-			 * Custom rules go here.
-			 * @see https://eslint.org/docs/rules/
-			 */
-		},
-	},
-	...compat.config({
-		plugins: [
-			"eslint:recommended",
-			"@limegrass/import-alias",
-			"jsx-a11y",
-			"sonarjs",
-			"react-refresh",
-		],
-		extends: ["plugin:jsx-a11y/recommended", "plugin:sonarjs/recommended"],
-		rules: {
-			"@limegrass/import-alias/import-alias": "off", // @limegrass
-			"deprecation/deprecation": "off", // sonarjs
-			"react-refresh/only-export-components": "off", // react-refresh
-		},
-	}),
+  {
+    ignores: [".next", "build"],
+    stylistic: { quotes: "double", semi: true },
+    settings: { react: { version: "detect" } },
+    formatters: { css: true },
+    react: true,
+    vue: false,
+    plugins: {
+      "@next/next": nextPlugin,
+      "@stylistic": stylisticPlugin,
+      "react": reactPlugin,
+      "jsx-a11y": jsxA11yPlugin,
+      "react-hooks": reactHooksPlugin,
+      "tailwindcss": tailwindcssPlugin,
+    },
+    rules: {
+      ...importedRules,
+      /**
+       * Custom rules go here.
+       * @see https://eslint.org/docs/rules/
+       */
+    },
+  },
+  ...compat.config({
+    plugins: ["eslint:recommended", "@limegrass/import-alias", "jsx-a11y", "sonarjs", "react-refresh"],
+    extends: ["plugin:jsx-a11y/recommended", "plugin:sonarjs/recommended"],
+    rules: {
+      "@limegrass/import-alias/import-alias": "off", // @limegrass
+      "deprecation/deprecation": "off", // sonarjs
+      "react-refresh/only-export-components": "off", // react-refresh
+    },
+  }),
 );
 module.exports = config;

@@ -1,11 +1,10 @@
-// import { SiteHeader } from "@/islands/navigation/site-header";
-import { GeneralShell } from "@/islands/wrappers/general-shell";
+import { ExtraNav } from "@/components/navigation/extra-nav";
 
-export default function MainLayout({ children }) {
+export default function ExtraLayout({ children }) {
   return (
     <>
-      {/* <SiteHeader /> */}
-      <GeneralShell>{children}</GeneralShell>
+      <ExtraNav />
+      {children}
     </>
   );
 }

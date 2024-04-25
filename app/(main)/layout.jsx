@@ -1,11 +1,10 @@
-import { SiteHeader } from "@/islands/navigation/site-header";
-import { GeneralShell } from "@/islands/wrappers/general-shell";
+import { SiteHeader } from "@/components/navigation/site-header";
 
 export default function MainLayout({ children }) {
   return (
     <>
       <SiteHeader />
-      <GeneralShell>{children}</GeneralShell>
+      {children}
     </>
   );
 }

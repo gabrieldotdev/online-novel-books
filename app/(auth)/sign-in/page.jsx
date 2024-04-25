@@ -1,6 +1,6 @@
-import { AuthFormContent } from "@/core/auth/shared";
+import { UserAuthForm } from "@/components/forms/user-auth-form";
+import { AuthFormContent } from "@/components/wrappers/auth/auth-form-content";
 import { fullURL } from "@/data/meta/builder";
-import { UserAuthForm } from "@/forms/user-auth-form";
 
 export const metadata = {
   metadataBase: fullURL(),

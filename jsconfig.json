@@ -1,7 +1,16 @@
 {
-	"compilerOptions": {
-		"paths": {
-			"@/*": ["./*"]
-		}
-	}
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "@data/*": ["./data/*"],
+      "@forms/*": ["./forms/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
+      "@islands/*": ["./islands/*"],
+      "@validations/*": ["./validations/*"],
+      "@configs/*": ["./configs/*"],
+      "@styles/*": ["./styles/*"],
+      "@app/*": ["./app/*"]
+    }
+  }
 }
