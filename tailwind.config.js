@@ -30,6 +30,7 @@ module.exports = withUt({
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         order: "hsl(var(--order-background))",
+        brown: "hsl(var(--brown))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

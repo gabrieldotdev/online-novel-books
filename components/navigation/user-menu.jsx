@@ -16,6 +16,7 @@ export function UserMenu({ isSticky, signInNow = "Đăng nhập", signIn = "Đ�
             <Link href="/profile" className={cls("leading-[4rem]", labelVariants())}>
               <UserAvatar
                 src="https://images.unsplash.com/photo-1711127263278-07edabd1990d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxODJ8fHxlbnwwfHx8fHw%3D"
+                className="border-2 border-white/80 rounded-xl"
                 fallback="N"
               />
             </Link>
