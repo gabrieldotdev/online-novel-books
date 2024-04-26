@@ -16,5 +16,5 @@ export function HonorItem({ src, alt = "", value, width = 30, height = 30 }) {
 }
 
 export function HonorImage({ src, alt = "", width = 30, height = 30 }) {
-  return <Image src={src} alt={alt} width={width} height={height} className="rounded-full" layout="fixed" />;
+  return <Image src={src} alt={alt} width={width} height={height} className="rounded-full" />;
 }

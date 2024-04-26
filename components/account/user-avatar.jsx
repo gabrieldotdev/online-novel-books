@@ -7,7 +7,7 @@ export function UserAvatar({ alt = "", src, fallback, className }) {
   return (
     <Avatar className={cls("h-9 w-9", className)}>
       <AvatarImage src={src} alt={alt} />
-      <AvatarFallback className="font-semibold text-2xl">{fallback}</AvatarFallback>
+      <AvatarFallback className="font-semibold">{fallback}</AvatarFallback>
     </Avatar>
   );
 }

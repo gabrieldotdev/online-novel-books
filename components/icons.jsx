@@ -19,6 +19,7 @@ import {
   Sparkles,
   Star,
   Sun,
+  UserRoundPlus,
   X,
 } from "lucide-react";
 
@@ -44,6 +45,7 @@ export const Icons = {
   minus: (props) => <Minus {...props} />,
   plus: (props) => <Plus {...props} />,
   sparkles: (props) => <Sparkles {...props} />,
+  userRoundPlus: (props) => <UserRoundPlus {...props} />,
   nextjs: (props) => (
     // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>

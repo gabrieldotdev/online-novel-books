@@ -1,4 +1,5 @@
 import { ExtraNav } from "@/components/navigation/extra-nav";
+import SiteFooter from "@/components/navigation/site-footer";
 import { GeneralShell } from "@/components/wrappers/general-shell";
 
 export default function ExtraLayout({ children }) {
@@ -6,6 +7,7 @@ export default function ExtraLayout({ children }) {
     <section>
       <ExtraNav />
       {children}
+      <SiteFooter />
     </section>
   );
 }
