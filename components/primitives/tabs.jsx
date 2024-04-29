@@ -7,7 +7,11 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 const Tabs = TabsPrimitive.Root;
 
 const TabsList = React.forwardRef(({ className, ...props }, ref) => (
-  <TabsPrimitive.List ref={ref} className={cn("inline-flex items-center justify-center", className)} {...props} />
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn("inline-flex h-12 items-center justify-center text-muted-foreground space-x-3", className)}
+    {...props}
+  />
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
 
@@ -15,10 +19,9 @@ const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all",
-      className
-        ? className
-        : "data-[state=active]:bg-background data-[state=active]:text-destructive data-[state=active]:shadow",
+      "inline-flex items-center justify-center whitespace-nowrap py-1 text-lg font-semibold transition-all focus-visible:outline-none",
+      "disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground",
+      className,
     )}
     {...props}
   />

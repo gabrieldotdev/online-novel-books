@@ -1,3 +1,4 @@
+import { getNovels } from "@/app/_api/getBooks";
 import { BookInf } from "@/components/information/books/book-inf";
 import { ListOfContents } from "@/components/information/books/list-of-contents";
 import { OtherRecommendedWorks } from "@/components/information/books/other-recommended-works";
@@ -18,9 +19,10 @@ export const metadata = {
   description: "Một số thông tin chi tiết về tiểu thuyết",
 };
 
-export default function BookPage({ params }) {
+export default async function BookPage({ params }) {
   const { bookId } = params;
   console.log(params);
+  // const [posts, albums] = await Promise.all([postsPromise, albumsPromise]);
 
   return (
     <Shell as="div" variant="none" className="max-w-[1200px] mx-auto">

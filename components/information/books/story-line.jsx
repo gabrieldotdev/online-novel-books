@@ -1,7 +1,9 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/primitives/card";
-import { Separator } from "@/components/primitives/separator";
+"use client";
 
-export function StoryLine() {
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/primitives/card";
+import { Link } from "@/components/primitives/link";
+
+export function StoryLine({ description }) {
   return (
     <Card className="border-none shadow-none bg-white">
       <CardHeader className="flex flex-row items-center justify-between space-x-2 space-y-0">
@@ -16,9 +18,20 @@ export function StoryLine() {
           cả. Bởi vì đã chết một lần rồi, vì vậy ngay cả việc chờ chết cũng khó. Cho đến một ngày, tôi bị một pháp sư
           xác sống triệu hồi đến một thế giới khác, hắn dường như đã ra lệnh gì đó cho tôi, nhưng tôi không hiểu hắn
           đang nói gì, ngược lại tôi đã giết hắn. Bằng cách nuốt chửng não của pháp sư xác sống, tôi đã thu được ngôn
-          ngữ chung của lục địa, kiến thức cơ bản về phép thuật, triệu hồi xác sống...
+          ngữ chung của lục địa, kiến thức cơ bản về phép thuật, triệu hồi xác sống và một số kiến thức cơ bản khác.
         </CardDescription>
       </CardContent>
+      <CardFooter className="flex flex-wrap justify-start gap-2">
+        <Link href="/" size="sm" className="bg-order rounded-full">
+          Xem thêm
+        </Link>
+        <Link href="/" size="sm" className="bg-order rounded-full">
+          Huyền thoại đồng nhân
+        </Link>
+        <Link href="/" size="sm" className="bg-order rounded-full">
+          Xác sống
+        </Link>
+      </CardFooter>
     </Card>
   );
 }

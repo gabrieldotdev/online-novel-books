@@ -1,13 +1,30 @@
 import Image from "next/image";
+import { SomeOtherWorks } from "@/components/information/books/some-other-works";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/primitives/card";
+import { BookshelfRankings } from "@/components/rankings/bookshelf-rankings";
+import { TopRanking } from "@/components/rankings/top-ranking";
 import { Ads } from "@/components/visuals/ads";
 import { Book } from "@/components/visuals/book";
 import { Shell } from "@/components/wrappers/shell-variants";
 
-export default function Home() {
+import { getBooks } from "../_api/getBooks";
+
+export default async function Home() {
+  const data = await getBooks();
+
   return (
-    <Shell as="div" className="py-0 md:py-0 space-y-8">
+    <Shell as="div">
       {/* festival */}
+      <section className="flex items-start w-[inherit] h-[inherit] gap-x-4">
+        <div className="w-72 shrink-0 space-y-4">
+          <SomeOtherWorks />
+        </div>
+        <div className="flex-grow space-y-4">slides</div>
+        <div className="w-72 shrink-0 space-y-4">
+          <TopRanking data={data} />
+        </div>
+      </section>
+
       <section className="flex items-start justify-center gap-x-4">
         <section className="flex-shrink-0 w-72 hidden lg:block">
           <Card
@@ -485,6 +502,10 @@ export default function Home() {
             </CardContent>
           </Card>
         </section>
+      </section>
+      {/* bookshelf rankings */}
+      <section className="w-[inherit] h-[inherit] gap-x-4">
+        <BookshelfRankings data={data} />
       </section>
       <Ads
         src="https://images.unsplash.com/photo-1712675009273-5a6c46663fbb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

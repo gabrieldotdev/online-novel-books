@@ -57,7 +57,7 @@ export const shellVariants = tv({
   base: "grid items-center gap-8 pb-8 pt-6 md:py-8",
   variants: {
     variant: {
-      default: "container mx-auto",
+      default: "max-w-[1200px] mx-auto",
       centered: "container flex h-[100dvh] max-w-2xl flex-col justify-center",
       full: "container flex h-[100dvh] max-w-none",
       none: "",
