@@ -16,7 +16,7 @@ export function TopRanking({ data }) {
     <Card
       className={cls(
         "cursor-pointer border-none shadow-none w-72 pt-20",
-        "bg-[url('https://revo.zongheng.com/www/2024/images/2a4768f.png')] bg-top bg-contain bg-no-repeat",
+        "bg-[url('/assets/tops/tps1.png')] bg-top bg-contain bg-no-repeat",
       )}
     >
       <section className="min-h-[200px] space-y-2 pb-4">

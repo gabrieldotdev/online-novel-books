@@ -2,6 +2,7 @@ import * as React from "react";
 import { Icons } from "@/components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/primitives/tabs";
 
+import { ComingSoon } from "./coming-soon";
 import { TopRanking } from "./top-ranking";
 
 export function BookshelfRankings({ data }) {
@@ -19,8 +20,11 @@ export function BookshelfRankings({ data }) {
         <TopRanking data={data} />
         <TopRanking data={data} />
       </TabsContent>
-      <TabsContent value="coming-soon" className="animate-pulse">
-        COMING SOON...
+      <TabsContent value="coming-soon" className="flex justify-between animate-pulse">
+        <ComingSoon />
+        <ComingSoon />
+        <ComingSoon />
+        <ComingSoon />
       </TabsContent>
     </Tabs>
   );

@@ -17,7 +17,7 @@ export function RankingItem({ item, idx, hovered, handleHover }) {
       {hovered !== item.id && (
         // {/* Thông tin cơ bản */}
         <div className={cls("flex flex-1 justify-between", "items-center")}>
-          <CardTitle className="leading-8 font-medium line-clamp-1">{item.name}</CardTitle>
+          <CardTitle className="leading-8 font-normal line-clamp-1">Test: {item.name}</CardTitle>
           <CardDescription className="text-xs">{item.view}</CardDescription>
         </div>
       )}
@@ -26,7 +26,7 @@ export function RankingItem({ item, idx, hovered, handleHover }) {
         // {/* Thông tin đầy đủ */}
         <div className={cls("flex flex-1 justify-between", "items-start")}>
           <div className="flex flex-col space-y-1">
-            <CardTitle className="font-medium leading-8 hover:text-destructive line-clamp-1">{item.name}</CardTitle>
+            <CardTitle className="font-normal leading-8 hover:text-destructive line-clamp-1">{item.name}</CardTitle>
             <div className="flex flex-col space-y-0.5">
               <CardDescription className="text-xs hover:text-destructive">{item.category}</CardDescription>
               <CardDescription className="text-xs">{item.view} lượt truy cập</CardDescription>
