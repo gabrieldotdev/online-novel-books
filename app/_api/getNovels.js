@@ -8,18 +8,18 @@ import { notFound } from "next/navigation";
  */
 import "server-only";
 
-export async function getBooks() {
-  const res = await fetch("https://661662d5b8b8e32ffc7d5027.mockapi.io/books");
+export async function getNovels() {
+	const res = await fetch("https://661662d5b8b8e32ffc7d5027.mockapi.io/books");
 
-  if (!res.ok) {
-    throw new Error("Something went wrong!");
-  }
+	if (!res.ok) {
+		throw new Error("Something went wrong!");
+	}
 
-  const books = await res.json();
+	const novels = await res.json();
 
-  if (books.length === 0) {
-    notFound();
-  }
+	if (novels.length === 0) {
+		notFound();
+	}
 
-  return books;
+	return novels;
 }

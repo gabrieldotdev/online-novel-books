@@ -1,3 +1,3 @@
 export function Search() {
-  return <div className="hidden md:flex">Search</div>;
+	return <div className="hidden md:flex">Search</div>;
 }

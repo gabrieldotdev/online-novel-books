@@ -1,3 +1,3 @@
 export default function AllPage() {
-  return <div>AllPage</div>;
+	return <div>AllPage</div>;
 }

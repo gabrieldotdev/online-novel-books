@@ -7,7 +7,7 @@ const hostnames = [
   "plus.unsplash.com",
   "images.unsplash.com",
   "revo.zongheng.com",
-  "via.placeholder.com",
+  "static.zongheng.com",
   "qdfepccdn.qidian.com",
 ];
 

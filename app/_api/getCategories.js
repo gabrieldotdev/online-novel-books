@@ -9,34 +9,42 @@ import { notFound } from "next/navigation";
 import "server-only";
 
 export async function getCategories({ parent } = {}) {
-  const res = await fetch(`https://app-playground-api.vercel.app/api/categories${parent ? `?parent=${parent}` : ""}`);
+	const res = await fetch(
+		`https://app-playground-api.vercel.app/api/categories${
+			parent ? `?parent=${parent}` : ""
+		}`,
+	);
 
-  if (!res.ok) {
-    throw new Error("Something went wrong!");
-  }
+	if (!res.ok) {
+		throw new Error("Something went wrong!");
+	}
 
-  const categories = await res.json();
+	const categories = await res.json();
 
-  if (categories.length === 0) {
-    notFound();
-  }
+	if (categories.length === 0) {
+		notFound();
+	}
 
-  return categories;
+	return categories;
 }
 
 export async function getCategory({ slug }) {
-  const res = await fetch(`https://app-playground-api.vercel.app/api/categories${slug ? `?slug=${slug}` : ""}`);
+	const res = await fetch(
+		`https://app-playground-api.vercel.app/api/categories${
+			slug ? `?slug=${slug}` : ""
+		}`,
+	);
 
-  if (!res.ok) {
-    // Render the closest `error.js` Error Boundary
-    throw new Error("Something went wrong!");
-  }
+	if (!res.ok) {
+		// Render the closest `error.js` Error Boundary
+		throw new Error("Something went wrong!");
+	}
 
-  const category = await res.json();
+	const category = await res.json();
 
-  if (!category) {
-    notFound();
-  }
+	if (!category) {
+		notFound();
+	}
 
-  return category;
+	return category;
 }
