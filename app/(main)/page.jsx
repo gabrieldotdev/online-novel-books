@@ -137,7 +137,7 @@ export default async function Home() {
             </section>
           </Card>
         </section>
-        <NoName data={novel} type="top" />
+        <NoName data={novel} type="vote" />
       </section>
 
       <section>
