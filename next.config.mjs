@@ -9,6 +9,8 @@ const hostnames = [
   "revo.zongheng.com",
   "static.zongheng.com",
   "qdfepccdn.qidian.com",
+  "bossaudioandcomic-1252317822.image.myqcloud.com",
+  "img2.qidian.com",
 ];
 
 /** @type {import('next').NextConfig} */
