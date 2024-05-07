@@ -8,7 +8,7 @@ import { useHovered } from "@/hooks/useHovered";
 import { Link } from "../primitives/link";
 import { RankingItem } from "./_comps/ranking-item";
 
-export function TopRanking({ sortedData, type }) {
+export function TopRanking({ data, sortedData, type }) {
   const { hovered, handleHover } = useHovered();
   // const novel = data.data.novels;
 

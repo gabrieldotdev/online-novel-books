@@ -1,15 +1,13 @@
 export const convertTypings = (type) => {
   switch (type) {
-    case "vote":
-      return "Lượt bình chọn";
-    case "view":
-      return "Lượt xem";
-    case "like":
-      return "Lượt thích";
-    case "comment":
-      return "Lượt bình luận";
-    case "new":
-      return "Mới nhất";
+    case "access":
+      return "Lượt truy cập";
+    case "newly-released":
+      return "Mới được phát hành";
+    case "number-of-words":
+      return "Số từ";
+    case "nominations":
+      return "Đề cử";
     case "test":
       return "Test";
     default:

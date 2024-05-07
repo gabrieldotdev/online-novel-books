@@ -7,9 +7,9 @@ import { TopRanking } from "./top-ranking";
 
 export function BookshelfRankings({ data }) {
   const sortedVote = data.sort((a, b) => b.vote - a.vote);
-  const sortedView = data.sort((a, b) => b.view - a.view);
-  const sortedLike = data.sort((a, b) => b.vote - a.vote);
-  const sortedComment = data.sort((a, b) => b.view - a.view);
+  const sortedNew = data.sort((a, b) => b.view - a.view);
+  const sortedWord = data.sort((a, b) => b.vote - a.vote);
+  const sortedAccess = data.sort((a, b) => b.view - a.view);
 
   return (
     <Tabs defaultValue="books">
@@ -22,10 +22,10 @@ export function BookshelfRankings({ data }) {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="books" className="flex justify-between">
-        <TopRanking sortedData={sortedVote} type={"test"} />
-        <TopRanking sortedData={sortedView} type={"test"} />
-        <TopRanking sortedData={sortedLike} type={"test"} />
-        <TopRanking sortedData={sortedComment} type={"test"} />
+        <TopRanking sortedData={sortedVote} type={"nominations"} />
+        <TopRanking sortedData={sortedNew} type={"newly-released"} />
+        <TopRanking sortedData={sortedWord} type={"number-of-words"} />
+        <TopRanking sortedData={sortedAccess} type={"access"} />
       </TabsContent>
       <TabsContent value="coming-soon" className="flex justify-center animate-pulse">
         <ComingSoon />
