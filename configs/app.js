@@ -8,6 +8,7 @@
 
 import { Icons } from "@/components/icons";
 import { fontGochiHand, fontMono, fontRoboto } from "@/styles/fonts";
+import { date } from "zod";
 
 import { bookDetails } from "./other";
 
@@ -194,6 +195,86 @@ export const siteConfig = {
       label: "Hot",
       href: "hot",
       icon: <Icons.flame size={15} />,
+    },
+  ],
+  events: [
+    {
+      id: 1,
+      label: "Cuộc thi viết truyện ngắn《Người đầu tiên》của tháng 4 đã chính thức khởi động!",
+      startDate: "2024-04-01",
+      endDate: "2024-04-30",
+    },
+    {
+      id: 2,
+      href: "/",
+      label: "Sự kiện của những độc giả đỉnh phong 《Siêu cấp độc giả》",
+      startDate: "2024-04-01",
+      endDate: "2024-04-30",
+    },
+    {
+      id: 3,
+      href: "/",
+      label: "Ngôi sao mới của bảng phiếu tháng 4《Siêu phẩm phong thủy tướng sư》",
+      startDate: "2024-04-01",
+      endDate: "2024-04-30",
+    },
+    {
+      id: 4,
+      href: "/",
+      label: "Lịch nghỉ lễ 30/4-1/5 năm 2024 của Việt Nam【Sự kiện mừng lễ ngày giải phóng miền Nam】",
+      startDate: "2024-04-30",
+      endDate: "2024-05-01",
+    },
+    {
+      id: 5,
+      href: "/",
+      label: "Lần đầu tiên《Đô thị đại y tiên》 sách mới ra mắt!",
+      startDate: "2024-04-01",
+      endDate: "2024-04-30",
+    },
+  ],
+  rankTheWorkTabs: [
+    {
+      value: "popular",
+      label: "Danh sách phổ biến",
+    },
+    {
+      value: "test1",
+      label: "Danh sách bán chạy nhất 24h",
+    },
+    {
+      value: "test2",
+      label: "Danh sách sắp ra mắt",
+    },
+    {
+      value: "test3",
+      label: "Nhấp vào bảng xếp hạng",
+    },
+    {
+      value: "test4",
+      label: "Danh sách đề xuất",
+    },
+    {
+      value: "test5",
+      label: "Bảng xếp hạng",
+    },
+    {
+      value: "test6",
+      label: "Danh sách kết thúc",
+    },
+    {
+      value: "test7",
+      label: "Danh sách đăng ký sách mới",
+    },
+    {
+      value: "test8",
+      label: "Danh sách cập nhật 24h",
+    },
+  ],
+  authorRankingTabs: [
+    {
+      value: "famous_author",
+      label: "Danh sách nổi tiếng của tác giả",
     },
   ],
 };

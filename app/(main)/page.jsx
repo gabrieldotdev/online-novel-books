@@ -11,63 +11,54 @@ import { NoName } from "@/components/rankings/no-name";
 import { Ads } from "@/components/visuals/ads";
 import { Book } from "@/components/visuals/book";
 import { Shell } from "@/components/wrappers/shell-variants";
+import { siteConfig } from "@/configs/app";
 import { adsFestival } from "@/configs/other";
 import { cls } from "@/utils";
 
 import { getCategories } from "../_api/getCategories";
 import { getNovels } from "../_api/getNovels";
 
-const notification = [
-  {
-    id: 1,
-    label: "Cuộc thi viết truyện ngắn《Người đầu tiên》của tháng 4 đã chính thức khởi động!",
-  },
-  {
-    id: 2,
-    href: "/",
-    label: "Ngôi sao mới của bảng phiếu tháng 4 《Siêu phẩm phong thủy tướng sư》",
-  },
-  {
-    id: 3,
-    href: "/",
-    label: "Ngôi sao mới của bảng phiếu tháng 4《Siêu phẩm phong thủy tướng sư》",
-  },
-  {
-    id: 4,
-    href: "/",
-    label: "Cuộc thi viết ngắn flash【Phương Đông Huyền Huyễn - Kiếm tu là vua】",
-  },
-  {
-    id: 5,
-    href: "/",
-    label: "Siêu sảng đen bia《Đô thị đại y tiên》 sách mới ra mắt!",
-  },
-];
-
 export default async function Home() {
-  const novel = await getNovels();
+  const novels = await getNovels();
   const categories = await getCategories();
+  const events = siteConfig.events;
+
+  const sortedVote = [...novels].sort((a, b) => b.vote - a.vote);
+  const sortedView = [...novels].sort((a, b) => b.view - a.view);
+  const sortedLike = [...novels].sort((a, b) => b.vote - a.vote);
+  const sortedComment = [...novels].sort((a, b) => b.view - a.view);
+  const sortedNew = [...novels].sort((a, b) => b.vote - a.vote);
+
+  // Array of top novels from each category
+  const topNovels = [sortedVote[0], sortedView[0], sortedLike[0], sortedComment[0], sortedNew[0]];
 
   return (
     <Shell as="div" className="py-0 md:py-2">
       {/* notification */}
       <section className="grid grid-cols-3 gap-x-8 mx-6">
-        {notification.slice(0, 5).map((item, idx) => {
+        {events.slice(0, 5).map((item, idx) => {
           let classes = "col-span-1";
           if (idx === 3) classes = "col-span-2";
           return (
-            <div
+            <Link
               key={item.id}
-              className={cls("cursor-pointer group flex items-center justify-between space-x-8 mb-2", classes)}
+              href={topNovels[idx]?.id || "/"}
+              className={cls("group justify-between space-x-8 mb-2", classes)}
+              title={item.label}
             >
               <span className="text-sm font-medium text-foreground/80 group-hover:text-destructive truncate">
                 {item.label}
               </span>
               <div className="flex items-center space-x-8">
-                <span className="text-xs font-semibold text-foreground/60">723569</span>
+                <span className="text-xs font-semibold text-foreground/60">
+                  {new Date(item.startDate).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" })}
+                  &nbsp;&#8226;&nbsp;
+                  {new Date(item.endDate).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" })}
+                </span>
+
                 {idx !== 2 && idx !== 4 && <Separator orientation="vertical" className="h-4" />}
               </div>
-            </div>
+            </Link>
           );
         })}
       </section>
@@ -84,7 +75,7 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <NoName data={novel} type="vote" />
+        <NoName data={novels} type="vote" />
       </section>
 
       {/* editor recommendations */}
@@ -137,13 +128,11 @@ export default async function Home() {
             </section>
           </Card>
         </section>
-        <NoName data={novel} type="vote" />
+        <NoName data={novels} type="vote" />
       </section>
 
-      <section>
-        <ChiefCarousel data={categories} />
-      </section>
-
+      {/* chief editor recommendations */}
+      {/* <ChiefCarousel /> */}
       {/* classic finished books */}
       <section className="flex items-start w-[inherit] h-full gap-x-4">
         <Card
@@ -153,7 +142,7 @@ export default async function Home() {
           )}
         >
           <div className="absolute -top-12 left-0 w-full h-6">
-            <span className="text-lg font-semibold text-foreground">Bộ sách đã hoàn thành</span>
+            <span className="text-lg font-semibold text-foreground">Bộ sách đã kết thúc</span>
           </div>
           <section className="min-h-[200px] mx-4 py-6">
             <ElCarousel />
@@ -167,9 +156,9 @@ export default async function Home() {
         </Card>
         <section className="flex-grow h-full">
           <Card className="relative cursor-pointer border-none shadow-none bg-transparent w-full h-[calc(100%-3rem)] mt-12">
-            {/* <div className="absolute -top-12 left-3 w-full h-6">
-              <span>Khuyến nghị của biên tập</span>
-            </div> */}
+            <div className="absolute -top-12 left-0 w-full h-6">
+              <span className="text-lg font-semibold text-foreground">Nếm thử sách</span>
+            </div>
             <section className="grid grid-cols-2 content-between min-h-full gap-x-3">
               {Array.from({ length: 6 }).map((_, index) => (
                 <CardContent key={index} className="flex items-center space-x-2 p-0">
@@ -190,12 +179,12 @@ export default async function Home() {
             </section>
           </Card>
         </section>
-        <NoName data={novel} type="top" />
+        <NoName data={novels} type="top" />
       </section>
 
       {/* bookshelf rankings */}
       <section className="w-[inherit] h-[inherit] gap-x-4">
-        <BookshelfRankings data={novel} />
+        <BookshelfRankings data={novels} />
       </section>
     </Shell>
   );

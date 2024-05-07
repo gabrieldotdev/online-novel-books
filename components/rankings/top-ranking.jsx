@@ -8,7 +8,7 @@ import { useHovered } from "@/hooks/useHovered";
 import { Link } from "../primitives/link";
 import { RankingItem } from "./_comps/ranking-item";
 
-export function TopRanking({ data, type }) {
+export function TopRanking({ sortedData, type }) {
   const { hovered, handleHover } = useHovered();
   // const novel = data.data.novels;
 
@@ -16,23 +16,19 @@ export function TopRanking({ data, type }) {
     <Card
       className="cursor-pointer shrink-0 border-none shadow-none w-72 pt-20"
       style={{
-        backgroundImage: `url('/assets/tops/${type}.png')`,
+        backgroundImage: `url('/assets/ranks/i564x240/${type}.png')`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top",
       }}
     >
       <section className="min-h-[200px] space-y-2 pb-4">
-        {/* {novel.slice(0, 10).map((item, idx) => ( */}
-        {data
-          .sort((a, b) => b.view - a.view)
-          .slice(0, 10)
-          .map((item, idx) => (
-            <RankingItem key={item.id} item={item} idx={idx} hovered={hovered} handleHover={handleHover} />
-          ))}
+        {sortedData.slice(0, 10).map((item, idx) => (
+          <RankingItem key={item.id} type={type} item={item} idx={idx} hovered={hovered} handleHover={handleHover} />
+        ))}
       </section>
       <CardFooter className="justify-end">
-        <Link href="/rankings" className="group space-x-0.5 text-xs font-normal text-muted-foreground">
+        <Link href="/rank" className="group space-x-0.5 text-xs font-normal text-muted-foreground">
           <span>Nhiều hơn</span>
           <Icons.chevronRight size={14} className="group-hover:animate-jumpR" />
         </Link>
