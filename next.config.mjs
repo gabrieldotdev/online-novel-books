@@ -17,6 +17,9 @@ const hostnames = [
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: hostnames.map((hostname) => ({
