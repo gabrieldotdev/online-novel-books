@@ -1,5 +1,4 @@
 import { env } from "@/configs/env.mjs";
-import { genHmacSignature } from "@/utils/genHmacSignature";
 
 export async function POST(request) {
   const body = await request.json();
