@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/components/primitives/ui/button";
+import { Button } from "@/components/primitives/button";
 import { cn } from "@/utils";
 import useEmblaCarousel from "embla-carousel-react";
 

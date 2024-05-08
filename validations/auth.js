@@ -1,17 +1,54 @@
 import * as z from "zod";
 
-export const authSchema = z.object({
-	email: z.string().email({
-		message: "Please enter a valid email address",
-	}),
-	password: z
-		.string()
-		.min(8, {
-			message: "Password must be at least 8 characters long",
-		})
-		.max(100)
-		.regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/, {
-			message:
-				"Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special character",
-		}),
+export const loginSchema = z.object({
+  email: z
+    .string({
+      message: "Email không được để trống",
+    })
+    .email({
+      message: "Địa chỉ email không hợp lệ",
+    }),
+  password: z
+    .string({
+      message: "Mật khẩu không được để trống",
+    })
+    .min(8, {
+      message: "Mật khẩu phải chứa ít nhất 8 ký tự",
+    })
+    .max(100),
 });
+
+export const registerSchema = z
+  .object({
+    name: z
+      .string({
+        message: "Tên không được để trống",
+      })
+      .min(3, {
+        message: "Tên phải chứa ít nhất 3 ký tự",
+      })
+      .max(50, {
+        message: "Tên không được quá 50 ký tự",
+      })
+      .regex(/^[^!@#$%())*&]+$/, {
+        message: "Tên không được chứa ký tự đặc biệt",
+      }),
+    email: z.string({ message: "Địa chỉ email không được để trống" }).email({
+      message: "Địa chỉ email không hợp lệ",
+    }),
+    password: z
+      .string({
+        message: "Mật khẩu không được để trống",
+      })
+      .min(8, {
+        message: "Mật khẩu phải chứa ít nhất 8 ký tự",
+      })
+      .max(100),
+    password_confirmation: z.string({
+      message: "Mật khẩu không được để trống",
+    }),
+  })
+  .refine((data) => data.password === data.password_confirmation, {
+    message: "Mật khẩu không khớp",
+    path: ["password_confirmation"],
+  });

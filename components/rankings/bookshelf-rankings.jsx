@@ -1,9 +1,8 @@
-import * as React from "react";
 import { Icons } from "@/components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/primitives/tabs";
 
-import { ComingSoon } from "./coming-soon";
-import { TopRanking } from "./top-ranking";
+import { ComingSoon } from "./coming-soon-dev";
+import { TopRanking } from "./ranking-tops/top-ranking";
 
 export function BookshelfRankings({ data }) {
   const sortedVote = data.sort((a, b) => b.vote - a.vote);
@@ -22,10 +21,10 @@ export function BookshelfRankings({ data }) {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="books" className="flex justify-between">
-        <TopRanking sortedData={sortedVote} type={"nominations"} />
-        <TopRanking sortedData={sortedNew} type={"newly-released"} />
-        <TopRanking sortedData={sortedWord} type={"number-of-words"} />
-        <TopRanking sortedData={sortedAccess} type={"access"} />
+        <TopRanking data={sortedVote} type={"nominations"} />
+        <TopRanking data={sortedNew} type={"newly-released"} />
+        <TopRanking data={sortedWord} type={"number-of-words"} />
+        <TopRanking data={sortedAccess} type={"access"} />
       </TabsContent>
       <TabsContent value="coming-soon" className="flex justify-center animate-pulse">
         <ComingSoon />

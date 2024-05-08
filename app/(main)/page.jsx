@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/com
 import { Link } from "@/components/primitives/link";
 import { Separator } from "@/components/primitives/separator";
 import { BookshelfRankings } from "@/components/rankings/bookshelf-rankings";
-import { NoName } from "@/components/rankings/no-name";
+import { NoName } from "@/components/rankings/ranking-tops/no-name";
 import { Ads } from "@/components/visuals/ads";
 import { Book } from "@/components/visuals/book";
 import { Shell } from "@/components/wrappers/shell-variants";

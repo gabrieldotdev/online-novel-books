@@ -5,10 +5,10 @@ import { Icons } from "@/components/icons";
 import { Card, CardFooter } from "@/components/primitives/card";
 import { useHovered } from "@/hooks/useHovered";
 
-import { Link } from "../primitives/link";
-import { RankingItem } from "./_comps/ranking-item";
+import { RankingItem } from "../_comps/ranking-item";
+import { Link } from "../../primitives/link";
 
-export function TopRanking({ data, sortedData, type }) {
+export function TopRanking({ data, type }) {
   const { hovered, handleHover } = useHovered();
   // const novel = data.data.novels;
 
@@ -23,7 +23,7 @@ export function TopRanking({ data, sortedData, type }) {
       }}
     >
       <section className="min-h-[200px] space-y-2 pb-4">
-        {sortedData.slice(0, 10).map((item, idx) => (
+        {data.slice(0, 10).map((item, idx) => (
           <RankingItem key={item.id} type={type} item={item} idx={idx} hovered={hovered} handleHover={handleHover} />
         ))}
       </section>

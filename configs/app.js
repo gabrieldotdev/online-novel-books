@@ -8,14 +8,14 @@
 
 import { Icons } from "@/components/icons";
 import { fontGochiHand, fontMono, fontRoboto } from "@/styles/fonts";
-import { date } from "zod";
-
-import { bookDetails } from "./other";
 
 export const REPOSITORY_OWNER = "lilwxs";
 export const REPOSITORY_NAME = "__graduationThesis_VibeVerse";
 export const REPOSITORY_URL = `https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}`;
 export const DISCORD_URL = "";
+
+// export const accessTokenExpiresIn = 60 * 60 * 24 * 3; // 3 days
+// export const refreshTokenExpiresIn = 60 * 60 * 24 * 7; // 7 days
 
 export const settings = {
   themeToggleEnabled: true,
@@ -235,44 +235,54 @@ export const siteConfig = {
   ],
   rankTheWorkTabs: [
     {
+      id: 1,
       value: "popular",
       label: "Danh sách phổ biến",
     },
     {
-      value: "test1",
+      id: 2,
+      value: "bestseller_24h",
       label: "Danh sách bán chạy nhất 24h",
     },
     {
-      value: "test2",
+      id: 3,
+      value: "coming_soon",
       label: "Danh sách sắp ra mắt",
     },
     {
-      value: "test3",
+      id: 4,
+      value: "click_ranking",
       label: "Nhấp vào bảng xếp hạng",
     },
     {
-      value: "test4",
+      id: 5,
+      value: "recommend",
       label: "Danh sách đề xuất",
     },
     {
-      value: "test5",
+      id: 6,
+      value: "ranking",
       label: "Bảng xếp hạng",
     },
     {
-      value: "test6",
+      id: 7,
+      value: "end",
       label: "Danh sách kết thúc",
     },
     {
-      value: "test7",
+      id: 8,
+      value: "new",
       label: "Danh sách đăng ký sách mới",
     },
     {
-      value: "test8",
+      id: 9,
+      value: "update_24h",
       label: "Danh sách cập nhật 24h",
     },
   ],
   authorRankingTabs: [
     {
+      id: 10,
       value: "famous_author",
       label: "Danh sách nổi tiếng của tác giả",
     },

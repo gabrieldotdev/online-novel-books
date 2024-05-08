@@ -1,17 +1,10 @@
-import { z } from "zod";
-
-export const env = z.object({
-	NEXT_PUBLIC_API_ENDPOINT: z.string(),
-	NEXT_PUBLIC_URL: z.string(),
-});
-
-const configProject = env.safeParse({
-	NEXT_PUBLIC_API_ENDPOINT: process.env.NEXT_PUBLIC_API_ENDPOINT,
-	NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL,
-});
-
-if (!configProject.success) {
-	throw new Error(configProject.error.message);
-}
-
-export default configProject.data;
+export const env = {
+  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001",
+  NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000",
+  VERCEL_URL: process.env.VERCEL_URL || "http://localhost:3000",
+  HMAC_SECRET: process.env.HMAC_SECRET || "secret",
+  // Authentication
+  ACCESS_TOKEN_EXPIRES_IN: process.env.ACCESS_TOKEN_EXPIRES_IN || 259200, // 3 days
+  REFRESH_TOKEN_EXPIRES_IN: process.env.REFRESH_TOKEN_EXPIRES_IN || 604800, // 7 days
+};

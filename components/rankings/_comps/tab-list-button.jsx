@@ -4,12 +4,16 @@ import { Link } from "@/components/primitives/link";
 import { Separator } from "@/components/primitives/separator";
 import { TabsList, TabsTrigger } from "@/components/primitives/tabs";
 
-export default function TabListButton({ work, author }) {
+export function TabListButton({ work, author, onClick }) {
   return (
     <Card className="border-none shadow-none bg-white">
       <CardHeader>
         <TabsList className="flex flex-col items-start space-x-0 space-y-6">
-          <TabsTrigger value={work[0].value} className="font-medium data-[state=active]:text-destructive">
+          <TabsTrigger
+            value={work[0].value}
+            className="font-medium data-[state=active]:text-destructive"
+            onClick={() => onClick(work[0].value, 0)}
+          >
             <Icons.flame size={20} className="mr-1" /> <span>{work[0].label}</span>
           </TabsTrigger>
           <Separator className="w-full" />
@@ -20,6 +24,7 @@ export default function TabListButton({ work, author }) {
                 key={tab.value}
                 value={tab.value}
                 className="w-full justify-start text-sm font-medium rounded-md px-6 py-2 data-[state=active]:text-destructive data-[state=active]:bg-destructive/10"
+                onClick={() => onClick(tab.value, tab.id)}
               >
                 {tab.label}
               </TabsTrigger>
@@ -33,6 +38,7 @@ export default function TabListButton({ work, author }) {
                 key={tab.value}
                 value={tab.value}
                 className="w-full justify-start text-sm font-medium rounded-md px-6 py-2 data-[state=active]:text-destructive data-[state=active]:bg-destructive/10"
+                onClick={() => onClick(tab.value, tab.id)}
               >
                 {tab.label}
               </TabsTrigger>
