@@ -15,6 +15,7 @@ import {
   RatingBoard,
   RegisterNewBook,
 } from "@/components/rankings/ranking-lists";
+import { IMAGE_TYPE } from "@/configs/app";
 import { useTabParams } from "@/hooks/use-tab-params";
 
 function TabContentOnly({ value, children }) {
@@ -37,31 +38,31 @@ export function EncyclopediaRankings({ tabs, workTabs, authorTabs, data = { nove
           <Popular data={data.novelData} />
         </TabContentOnly>
         <TabContentOnly value={tabs[1].value}>
-          <Bestseller data={data.novelData} type="test" />
+          <Bestseller data={data.novelData} type={IMAGE_TYPE.bestseller} />
         </TabContentOnly>
         <TabContentOnly value={tabs[2].value}>
-          <NewBook data={data.categoryData} />
+          <NewBook data={data.novelData} type={IMAGE_TYPE.newBook} />
         </TabContentOnly>
         <TabContentOnly value={tabs[3].value}>
-          <Access />
+          <Access data={data.novelData} type={IMAGE_TYPE.access} />
         </TabContentOnly>
         <TabContentOnly value={tabs[4].value}>
-          <Propose />
+          <Propose data={data.novelData} type={IMAGE_TYPE.propose} />
         </TabContentOnly>
         <TabContentOnly value={tabs[5].value}>
-          <RatingBoard />
+          <RatingBoard data={data.novelData} type={IMAGE_TYPE.ratingBoard} />
         </TabContentOnly>
         <TabContentOnly value={tabs[6].value}>
-          <BookEnded />
+          <BookEnded data={data.novelData} type={IMAGE_TYPE.bookEnded} />
         </TabContentOnly>
         <TabContentOnly value={tabs[7].value}>
-          <RegisterNewBook />
+          <RegisterNewBook data={data.novelData} type={IMAGE_TYPE.registerNewBook} />
         </TabContentOnly>
         <TabContentOnly value={tabs[8].value}>
-          <BookUpdate />
+          <BookUpdate data={data.novelData} type={IMAGE_TYPE.bookUpdate} />
         </TabContentOnly>
         <TabContentOnly value={tabs[9].value}>
-          <FamousAuthor />
+          <FamousAuthor data={data.novelData} type={IMAGE_TYPE.famousAuthor} />
         </TabContentOnly>
       </div>
     </Tabs>

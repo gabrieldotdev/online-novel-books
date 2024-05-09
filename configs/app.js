@@ -7,12 +7,32 @@
  */
 
 import { Icons } from "@/components/icons";
-import { fontGochiHand, fontMono, fontRoboto } from "@/styles/fonts";
+import { fontMono, fontRoboto, fontSans } from "@/styles/fonts";
 
+// Repository settings
 export const REPOSITORY_OWNER = "lilwxs";
 export const REPOSITORY_NAME = "__graduationThesis_VibeVerse";
 export const REPOSITORY_URL = `https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}`;
 export const DISCORD_URL = "";
+
+// Pagination settings
+export const ITEMS_PER_PAGE_OPTIONS = [10, 20, 30, 40, 50];
+export const MAX_DISPLAY_PAGES = 5;
+export const ELLIPSIS_OFFSET = 2;
+
+// Image types for ranking lists
+export const IMAGE_TYPE = {
+  popular: "test",
+  bestseller: "test",
+  newBook: "test",
+  access: "test",
+  propose: "test",
+  ratingBoard: "test",
+  bookEnded: "test",
+  registerNewBook: "test",
+  bookUpdate: "test",
+  famousAuthor: "test",
+};
 
 // export const accessTokenExpiresIn = 60 * 60 * 24 * 3; // 3 days
 // export const refreshTokenExpiresIn = 60 * 60 * 24 * 7; // 7 days
@@ -42,7 +62,7 @@ export const optionalControls = {
   fontFamily: [
     { class: fontRoboto.className, label: "Roboto" },
     { class: fontMono.className, label: "Mono" },
-    { class: fontGochiHand.className, label: "Gochi Hand" },
+    { class: fontSans.className, label: "Sans" },
   ],
   fontSize: [
     { class: "text-sm", label: "Small" },

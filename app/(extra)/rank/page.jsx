@@ -1,8 +1,8 @@
-import { getCategories } from "@/app/_api/getCategories";
-import { getNovels } from "@/app/_api/getNovels";
 import { EncyclopediaRankings } from "@/components/rankings/encyclopedia-rankings";
 import { Shell } from "@/components/wrappers/shell-variants";
 import { siteConfig } from "@/configs/app";
+import { getCategories } from "@/data/get-categories";
+import { getNovels } from "@/data/get-novels";
 
 export default async function Page() {
   const novels = await getNovels();

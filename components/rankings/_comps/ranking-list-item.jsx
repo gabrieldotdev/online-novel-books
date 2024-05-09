@@ -6,13 +6,13 @@ import { IconImage } from "@/components/visuals/icon/icon-image";
 import { IconNumber } from "@/components/visuals/icon/icon-number";
 import { convertRankings } from "@/utils/convertRankings";
 
-export function RankingListItem({ item, idx }) {
+export function RankingListItem({ item, rank }) {
   return (
-    <CardContent key={idx} className="flex items-center space-x-6 px-8 py-0">
-      {idx < 3 ? (
-        <IconImage src={convertRankings(idx + 1)} alt={`Top ${idx + 1}`} width={40} height={40} />
+    <CardContent key={item.id} className="flex items-center space-x-6 px-8 py-0">
+      {rank < 4 ? (
+        <IconImage src={convertRankings(rank)} alt={`Top ${rank}`} width={40} height={40} />
       ) : (
-        <IconNumber number={idx < 9 ? `0${idx + 1}` : idx + 1} size={18} width={40} height={40} />
+        <IconNumber number={rank < 10 ? `0${rank}` : rank} size={18} width={40} height={40} />
       )}
 
       <div key={item.id} className="flex flex-1 items-center space-x-4">
@@ -33,8 +33,11 @@ export function RankingListItem({ item, idx }) {
           </CardDescription>
         </div>
       </div>
-      <div className="inline-flex flex-col">
-        <Link href={"/book/76347153"} target="_blank" variant="outline" size="lg" className="border-dashed">
+      <div className="inline-flex flex-col items-center">
+        <CardDescription className="text-xs text-muted-foreground">
+          <span className="font-semibold text-base text-destructive">32752</span> Truy cập
+        </CardDescription>
+        <Link href={"/book/76347153"} target="_blank" size="lg" className="bg-destructive/10 text-destructive">
           Chi tiết sách
         </Link>
         <Button size="sm" className="text-xs text-muted-foreground font-normal hover:text-destructive">

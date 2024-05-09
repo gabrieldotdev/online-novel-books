@@ -3,6 +3,7 @@ import { ChiefCarousel } from "@/components/navigation/carousels/chief-carousel"
 import { ElCarousel } from "@/components/navigation/carousels/el-carousel";
 import { FestivalCarousel } from "@/components/navigation/carousels/festival-carousel";
 import { ChiefCategories } from "@/components/navigation/categories/chief-categories";
+import { Button } from "@/components/primitives/button";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/primitives/card";
 import { Link } from "@/components/primitives/link";
 import { Separator } from "@/components/primitives/separator";
@@ -15,8 +16,8 @@ import { siteConfig } from "@/configs/app";
 import { adsFestival } from "@/configs/other";
 import { cls } from "@/utils";
 
-import { getCategories } from "../_api/getCategories";
-import { getNovels } from "../_api/getNovels";
+import { getCategories } from "../../data/get-categories";
+import { getNovels } from "../../data/get-novels";
 
 export default async function Home() {
   const novels = await getNovels();

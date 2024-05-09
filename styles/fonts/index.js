@@ -1,27 +1,23 @@
-import {
-	JetBrains_Mono as FontMono,
-	Gochi_Hand,
-	Roboto,
-} from "next/font/google";
+import { JetBrains_Mono as FontMono, Inter as FontSans, Gochi_Hand, Roboto } from "next/font/google";
 
-// export const fontSans = FontSans({
-//   subsets: ["latin"],
-//   variable: "--font-sans",
-// });
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const fontMono = FontMono({
-	subsets: ["latin"],
-	variable: "--font-mono",
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const fontRoboto = Roboto({
-	weight: ["400", "500", "700"],
-	subsets: ["vietnamese"],
-	display: "swap",
+  weight: ["400", "500", "700"],
+  subsets: ["vietnamese"],
+  display: "swap",
 });
 
 export const fontGochiHand = Gochi_Hand({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--font-gochi-hand",
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-gochi-hand",
 });

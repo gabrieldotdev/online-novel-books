@@ -1,11 +1,25 @@
-import { Icons } from "@/components/icons";
-import { TestPaginate } from "@/components/navigation/paginations/test-paginate";
-import { Card, CardFooter } from "@/components/primitives/card";
-import { Link } from "@/components/primitives/link";
+"use client";
+
+import { PaginationControls } from "@/components/navigation/pagination/pagination-controls";
+import { Card } from "@/components/primitives/card";
+import { usePagination } from "@/hooks/use-pagination";
 
 import { RankingListItem } from "../_comps/ranking-list-item";
 
 export function Bestseller({ data, type }) {
+  const sortedData = data.sort((a, b) => b.vote - a.vote);
+  const {
+    currentPage,
+    maxPage,
+    pages,
+    handlePageChange,
+    handleItemsPerPageChange,
+    currentItems,
+    shouldRenderEllipsisStart,
+    shouldRenderEllipsisEnd,
+    itemsPerPage,
+  } = usePagination(sortedData);
+
   return (
     <Card
       className="cursor-pointer shrink-0 border-none shadow-none w-full pt-32"
@@ -17,17 +31,25 @@ export function Bestseller({ data, type }) {
       }}
     >
       <section className="space-y-8">
-        {data.slice(0, 20).map((item, idx) => (
-          <RankingListItem key={item.id} item={item} idx={idx} />
-        ))}
+        {currentItems.map((item, idx) => {
+          const rank = (currentPage - 1) * itemsPerPage + idx + 1;
+          return <RankingListItem key={item.id} item={item} rank={rank} />;
+        })}
       </section>
-      <CardFooter className="justify-center mt-10">
-        <TestPaginate />
-        {/* <Link href="/rank" className="group space-x-0.5 text-xs font-normal text-muted-foreground">
-          <span>Nhiều hơn</span>
-          <Icons.chevronRight size={14} className="group-hover:animate-jumpR" />
-        </Link> */}
-      </CardFooter>
+      <PaginationControls
+        currentPage={currentPage}
+        maxPage={maxPage}
+        pages={pages}
+        onPrevious={() => handlePageChange(currentPage - 1)}
+        onNext={() => handlePageChange(currentPage + 1)}
+        onFirst={() => handlePageChange(1)}
+        onLast={() => handlePageChange(maxPage)}
+        onJump={handlePageChange}
+        shouldRenderEllipsisStart={shouldRenderEllipsisStart}
+        shouldRenderEllipsisEnd={shouldRenderEllipsisEnd}
+        itemsPerPage={itemsPerPage}
+        onItemsPerPageChange={handleItemsPerPageChange}
+      />
     </Card>
   );
 }
