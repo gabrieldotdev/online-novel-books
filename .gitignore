@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/dist
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -15,6 +16,7 @@
 
 # production
 /build
+.output
 
 # misc
 .DS_Store
@@ -30,7 +32,19 @@ yarn-error.log*
 
 # vercel
 .vercel
+.turbo
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# **/.vscode
+
+# client
+/client/node_modules
+/client/.next
+/client/.env
+
+# server
+/server/node_modules
+/server/.env
